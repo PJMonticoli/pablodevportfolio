@@ -1,0 +1,56 @@
+---
+const personalImageAlt = "Pablo Monticoli";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../icons/Linkedin.astro";
+import MailIcon from "../icons/Mail.astro";
+import SocialMedia from "../components/SocialMedia.astro";
+import GitHub from "../icons/GitHub.astro";
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/avatar.jpg"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/pablo-javier-mont%C3%ADcoli-b69733248/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Open to Work</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, I'm Pablo
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    +1 year of experience as a <strong
+      >Full-Stack Developer, graduated from the National Technological
+      University.
+    </strong> I'm From Córdoba, Argentina 🇦🇷. Specialized in developing unique applications
+    and continuous learning.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialMedia href="https://github.com/PJMonticoli">
+      <GitHub class="size-4" />
+      GitHub
+    </SocialMedia>
+    <SocialMedia
+      href="https://www.linkedin.com/in/pablo-javier-mont%C3%ADcoli-b69733248/"
+    >
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialMedia>
+    <SocialMedia href="mailto:pablo_monticoli@hotmail.com">
+      <MailIcon class="size-4" />
+      Mail me to
+    </SocialMedia>
+  </nav>
+</div>
