@@ -48,7 +48,7 @@
 # Recursos utilizados
 - https://bg.ibelick.com
 - https://flowbite.com/
-- tabler.io/icons
+- https://tabler.io/icons
 - https://svgl.app/
 - https://shots.so/
 - https://squoosh.app/
