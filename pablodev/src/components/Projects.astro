@@ -1,14 +1,19 @@
 ---
 import LinkButton from "./LinkButton.astro";
 import GitHub from "../icons/GitHub.astro";
-import AngularIcon from "../icons/GitHub.astro";
+import AngularIcon from "../icons/Angular.astro";
 import SupabaseIcon from "../icons/Supabase.astro";
 import MysqlIcon from "../icons/Mysql.astro";
-import NodeIcon from "../icons/Node.astro";
 import BootstrapIcon from "../icons/Bootstrap.astro";
 import CssIcon from "../icons/Css.astro";
 import HtmlIcon from "../icons/Html.astro";
 import TypeScriptIcon from "../icons/TypeScript.astro";
+import JavaIcon from "../icons/Java.astro";
+import SpringIcon from "../icons/Spring.astro";
+import VueIcon from "../icons/vue.astro";
+import MongoIcon from "../icons/MongoDB.astro";
+import NodeIcon from "../icons/Node.astro";
+
 const TAGS = {
   ANGULAR: {
     name: "Angular",
@@ -24,11 +29,6 @@ const TAGS = {
     name: "MySQL",
     class: "bg-[#003159] text-white",
     icon: MysqlIcon,
-  },
-  NODEJS: {
-    name: "NodeJs",
-    class: "bg-[#003159] text-white",
-    icon: NodeIcon,
   },
   BOOTSTRAP: {
     name: "Bootstrap",
@@ -50,6 +50,31 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: TypeScriptIcon,
   },
+  JAVA: {
+    name: "Java",
+    class: "bg-[#003159] text-white",
+    icon: JavaIcon,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-[#003159] text-white",
+    icon: SpringIcon,
+  },
+  VUE: {
+    name: "Vue",
+    class: "bg-black text-white",
+    icon: VueIcon,
+  },
+  MongoDB: {
+    name: "MongoDB",
+    class: "bg-[#003159] text-white",
+    icon: MongoIcon,
+  },
+  NodeJs: {
+    name: "NodeJs",
+    class: "bg-black text-white",
+    icon: NodeIcon,
+  },
 };
 
 const PROJECTS = [
@@ -64,10 +89,18 @@ const PROJECTS = [
   {
     title: "Back-End with NodeJs",
     description:
-      "The backend API for the online chocolate shop was developed using Node.js (Framework Express.js) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store. ",
+      "The backend API for the online chocolate shop was developed using Node.js (Express.js Framework) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store. ",
     github: "https://github.com/PJMonticoli/BackEndChocolateria.git",
     image: "/backendproject.webp",
-    tags: [TAGS.NODEJS, TAGS.MYSQL],
+    tags: [TAGS.NodeJs, TAGS.MYSQL],
+  },
+  {
+    title: "Hotaka iKhodi Bootcamp Project",
+    description:
+      "Dockwitcher is a web-based logistics platform streamlining transportation and loading operations for industrial sectors. Our solution centralizes fleet and dock management, offers real-time tracking, and provides proactive notifications, enhancing logistics efficiency and security. ",
+    github: "https://github.com/PJMonticoli/dockwitcher-app.git",
+    image: "/dockwitcher.webp",
+    tags: [TAGS.VUE, TAGS.SPRING, TAGS.JAVA, TAGS.MongoDB],
   },
   {
     title: "Full-Stack Project",
