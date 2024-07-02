@@ -1,6 +1,7 @@
 
 # Portfolio desarrollado con Astro
-![imagen](https://github.com/PJMonticoli/portfolio-astro/assets/139149183/a1590d72-319f-4063-be35-56b8bfd56f4c)
+![imagen](https://github.com/PJMonticoli/pablodevportfolio/assets/139149183/3dd08ef7-0bc2-48d5-9984-b871492546f8)
+
 
 
 
@@ -47,7 +48,7 @@
 # Recursos utilizados
 - https://bg.ibelick.com
 - https://flowbite.com/
-- tabler.io/icons
+- https://tabler.io/icons
 - https://svgl.app/
 - https://shots.so/
 - https://squoosh.app/
