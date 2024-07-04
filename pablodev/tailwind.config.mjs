@@ -4,5 +4,13 @@ export default {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		function({ addUtilities }) {
+		  addUtilities({
+			'.notranslate': {
+			  'translate': 'no',
+			},
+		  })
+		},
+	  ],
 }
