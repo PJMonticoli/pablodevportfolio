@@ -1,6 +1,7 @@
 
 # Portfolio desarrollado con Astro
-![imagen](https://github.com/PJMonticoli/pablodevportfolio/assets/139149183/3dd08ef7-0bc2-48d5-9984-b871492546f8)
+![imagen](https://github.com/PJMonticoli/pablodevportfolio/assets/139149183/906c4e55-954a-470d-874b-1d527872234a)
+
 
 
 
