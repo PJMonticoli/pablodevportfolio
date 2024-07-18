@@ -1,37 +1,105 @@
 ---
+// Importar los íconos y definir los temas disponibles
 import SunIcon from "../icons/Sun.astro";
 import MoonIcon from "../icons/Moon.astro";
-
+import SystemIcon from "../icons/System.astro";
 
 const THEMES = ["Light", "Dark", "System"];
 ---
 
 <div class="relative ml-1 mr-1">
-  <button
-    id="theme-toggle-btn"
-    class="appearance-none border-none flex items-center justify-center hover:scale-125 transition"
-    onclick="toggleTheme()"
-  >
-    <span class="sr-only">Elige el tema</span>
-    <SunIcon id="light" class="theme-toggle-icon size-5 transition-all" />
-    <MoonIcon
-      id="dark"
-      class="theme-toggle-icon absolute size-5 transition-all"
-      style="top: 50%; transform: translateY(-50%); display: none;"
-    />
-  </button>
+  <label class="switch">
+    <input type="checkbox" class="input" id="theme-toggle" />
+    <span class="slider"></span>
+    <span class="sun">
+      <SunIcon />
+    </span>
+    <span class="moon">
+      <MoonIcon />
+    </span>
+  </label>
 </div>
 
 <style>
-  #theme-toggle-btn {
+  .switch {
+    font-size: 17px;
     position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73c0fc;
+    transition: 0.4s;
+    border-radius: 30px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: 0.4s;
+  }
+
+  .input:checked + .slider {
+    background-color: #183153;
+  }
+
+  .input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  .sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.4s;
+  }
+
+  .moon svg {
+    fill: #73c0fc;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.4s;
+  }
+
+  .input:checked ~ .sun svg {
+    opacity: 0;
+  }
+
+  .input:checked ~ .moon svg {
+    opacity: 1;
   }
 </style>
 
 <script is:inline>
-  let remove = null;
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-
+  // Obtener el tema preferido del localStorage o del sistema
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined") {
       return localStorage.getItem("theme") ?? "system";
@@ -41,36 +109,33 @@ const THEMES = ["Light", "Dark", "System"];
       : "light";
   };
 
-  const updateIcon = (themePreference) => {
-    document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
-      element.style.display = element.id === themePreference ? "block" : "none";
-    });
-  };
-
+  // Actualizar el tema según la preferencia
   const updateTheme = () => {
-    if (remove != null) {
-      remove();
-    }
-    matchMedia.addEventListener("change", updateTheme);
-    remove = () => {
-      matchMedia.removeEventListener("change", updateTheme);
-    };
-
     const themePreference = getThemePreference();
     const isDark =
       themePreference === "dark" ||
-      (themePreference === "system" && matchMedia.matches);
+      (themePreference === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    updateIcon(themePreference);
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+    // Actualizar el estado del checkbox
+    document.getElementById("theme-toggle").checked = isDark;
   };
 
-  const toggleTheme = () => {
-    const themePreference = getThemePreference();
-    const newTheme = themePreference === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", newTheme);
+  // Función para manejar el cambio de tema
+  const handleThemeChange = (e) => {
+    const isChecked = e.target.checked;
+    const theme = isChecked ? "dark" : "light";
+    localStorage.setItem("theme", theme);
     updateTheme();
   };
 
-  updateTheme();
+  // Inicializar el tema y agregar el listener al checkbox
+  document.addEventListener("DOMContentLoaded", () => {
+    updateTheme();
+    document
+      .getElementById("theme-toggle")
+      .addEventListener("change", handleThemeChange);
+  });
 </script>
