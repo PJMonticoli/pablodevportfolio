@@ -1,6 +1,7 @@
 
 # Portfolio desarrollado con Astro
-![imagen](https://github.com/user-attachments/assets/3fea3f73-f42a-440c-8f6a-3387103718ec)
+![imagen](https://github.com/user-attachments/assets/ffe64444-b18e-45d6-a8e7-cc15fe845b96)
+
 
 
 
