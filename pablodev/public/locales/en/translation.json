@@ -1,0 +1,43 @@
+{
+  "personalImageAlt": "Pablo Monticoli",
+  "openToWorkBadge": "Open to Work",
+  "helloMessage": "Hey, I'm Pablo",
+  "experienceMessage": "Over 1 year of experience as a ",
+  "roleDescription": "Software Developer, graduated from the National Technological University.",
+  "fromLocation": "I'm from Córdoba, Argentina 🇦🇷.",
+  "specializedMessage": "I'm specialized in developing unique applications and continuous learning.",
+  "mailText": "Contact me",
+  "projectTitle": "Projects",
+  "buttonText": "Code",
+  "title1": "Front-End with Angular",
+  "description1": "Online store for a chocolate shop, there you can you can explore and purchase products. Become a member to enjoy special benefits. If you're the shop owner, you can also access detailed sales reports and analytics.",
+
+  "title2": " Back-End with NodeJs",
+  "description2": "The backend API for the online chocolate shop was developed using Node.js (Express.js Framework) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store.",
+
+  "title3": " Hotaka iKhodi Bootcamp Project",
+  "description3": "Dockwitcher is a web-based logistics platform streamlining transportation and loading operations for industrial sectors. The solution centralizes fleet and dock management, offers real-time tracking, and provides proactive notifications, enhancing logistics efficiency and security.",
+
+  "title4": " Full-Stack Project",
+  "description4": "Innovative platform, powered by Angular and Supabase, where you can seamlessly manage your chatbot's database. Designed for simplicity and efficiency, the website offers robust tools to create, update, and optimize your chatbot's data effortlessly.",
+
+  "knowMore": "Read More",
+  "experienceTitle": "Professional Experience & Training",
+
+  "navExperience": "Experience",
+  "navProject": "Projects",
+  "navContact": "Contact",
+  "footerMessage": "Web-Site Developed by Pablo Monticoli ",
+
+  "date1": "August 2023 - Present",
+  "exdescription1": "Currently doing internships in the Systems Area of the company. Working with .NET, C#, SQL/NoSQL, Angular and Python. I’m involved in application development and database management, collaborating on process optimization and technical issue resolution.",
+
+  "date2": "July 2024 - Present",
+  "exdescription2": "Trained in data analysis, focusing on exploring, interpreting, and visualizing data for decision-making. Skilled in accessing raw data, filtering, and extracting relevant information. Proficient in creating clear and accessible reports and dashboards using Qlik Sense, Power BI and SQL.",
+
+  "date3": "April 2024 - Present",
+  "exdescription3": "Currently participating in the trainning course at Hotaka Ikhodi, focusing on advanced software architectures and development methodologies. The course covers SOA, DDD, CQRS, SOLID principles, IoC, event sourcing, unit testing, TDD, BDD, and CI, providing practical skills and best practices for robust software development. We have been working with Spring Boot, Java, Kotlin, and Vue.js.",
+
+  "date4": "February 2023 - August 2023",
+  "exdescription4": "Developed an online store for a chocolate shop, focusing on optimizing user experience and enhancing purchase functionality. Designed and implemented a user-friendly e-commerce platform to improve online shopping. Utilized responsive design to ensure cross-device functionality and incorporated features such as product filtering, advanced search, and personalized recommendations. Streamlined the checkout process by optimizing the shopping cart, order summary, and integrating multiple payment options to facilitate a smooth purchasing experience."
+}

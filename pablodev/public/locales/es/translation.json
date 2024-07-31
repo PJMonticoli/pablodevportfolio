@@ -1,0 +1,43 @@
+{
+  "personalImageAlt": "Pablo Monticoli",
+  "openToWorkBadge": "Disponible para trabajar",
+  "helloMessage": "Hola, soy Pablo",
+  "experienceMessage": "Más de 1 año de experiencia como ",
+  "roleDescription": "Desarrollador de Software, graduado de la Universidad Tecnológica Nacional.",
+  "fromLocation": "Soy de Córdoba, Argentina 🇦🇷.",
+  "specializedMessage": "Estoy especializado en el desarrollo de aplicaciones únicas y en el aprendizaje continuo.",
+  "mailText": "Contáctame",
+  "projectTitle": "Proyectos",
+  "buttonText": "Código",
+  "title1": "Front-End con Angular",
+  "description1": "Tienda en línea para una chocolatería, allí se puede explorar y comprar productos. Conviertase en miembro para disfrutar de beneficios especiales. Si eres el propietario de la tienda, también puedes acceder a informes detallados de ventas y análisis.",
+
+  "title2": "Back-End con Node.js",
+  "description2": "La API de backend para la tienda de chocolate en línea se desarrolló usando Node.js (Framework Express.js) con el motor de bases de datos MySQL. Esta robusta y escalable aplicación del lado del servidor admite varias funcionalidades necesarias para ejecutar una tienda en línea dinámica e interactiva.",
+
+  "title3": "Hotaka iKhodi Bootcamp Project",
+  "description3": "Dockwitcher es una plataforma logística basada en la web que racionaliza las operaciones de transporte y carga para los sectores industriales. La solución centraliza la gestión de flotas y muelles, ofrece seguimiento en tiempo real y proporciona notificaciones proactivas, mejorando la eficiencia y la seguridad logística.",
+
+  "title4": "Proyecto Full-Stack",
+  "description4": "Plataforma innovadora, impulsada por Angular y Supabase, donde puede administrar a la perfección la base de datos de su chatbot. Diseñado para la simplicidad y la eficiencia, el sitio web ofrece herramientas robustas para crear, actualizar y optimizar los datos de su chatbot sin esfuerzo.",
+
+  "knowMore": "Leer más",
+  "experienceTitle": "Experiencia Laboral y Bootcamps",
+
+  "navExperience": "Experiencia",
+  "navProject": "Proyectos",
+  "navContact": "Contacto",
+  "footerMessage": "Página Web Desarrollada por Pablo Monticoli",
+
+  "date1": " Agosto 2023 - Presente",
+  "exdescription1": "Actualmente realizando prácticas en el Área de Sistemas de la empresa. Trabajando con .NET, C#, SQL/NoSQL,Angular y Python. Involucrado en el desarrollo de aplicaciones y la gestión de bases de datos. Colaborando en la optimización de procesos y la resolución de cuestiones técnicas.",
+
+  "date2": "Julio 2024 - Presente",
+  "exdescription2": "Capacitación en análisis de datos, con enfoque en el acceso, recolección, filtrado, limpieza y exploración de datos. Creación de informes y visualización de datos, presentación clara y efectiva de la información mediante Qlik Sense, Power BI y SQL.",
+
+  "date3": "  Abril 2024 - Presente ",
+  "exdescription3": "Actualmente participo en el Bootcamp de Programación en Hotaka Ikhodi, enfocado en arquitecturas de software avanzadas y metodologías de desarrollo. El curso abarca SOA, DDD, CQRS, principios SOLID, IoC, abastecimiento de eventos, pruebas de unidad, TDD, BDD e CI, proporcionando habilidades prácticas y mejores prácticas para un desarrollo de software robusto. Hemos estado trabajando con Spring Boot, Java, Kotlin y Vue.js.",
+
+  "date4": " Febrero 2023 - Agosto 2023",
+  "exdescription4": "Desarrollé una tienda en línea para una chocolatería, enfocándome en optimizar la experiencia del usuario y mejorar la funcionalidad de compra. Diseñé e implementé una plataforma de comercio electrónico fácil de usar para mejorar las compras en línea. Utilicé un diseño responsivo para garantizar la funcionalidad en diferentes dispositivos e incorporé características como filtrado de productos, búsqueda avanzada y recomendaciones personalizadas. Optimicé el proceso de pago al mejorar el carrito de compras, el resumen del pedido e integrar múltiples opciones de pago para facilitar una experiencia de compra fluida."
+}
