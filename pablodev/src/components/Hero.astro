@@ -6,6 +6,27 @@ import MailIcon from "../icons/Mail.astro";
 import SocialMedia from "../components/SocialMedia.astro";
 import GitHub from "../icons/GitHub.astro";
 import Upload from "../icons/Upload.astro";
+
+const heroItems = [
+  {
+    key: "helloMessage",
+  },
+  {
+    key: "experienceMessage",
+  },
+  {
+    key: "roleDescription",
+  },
+  {
+    key: "fromLocation",
+  },
+  {
+    key: "specializedMessage",
+  },
+  {
+    key: "mailText",
+  },
+];
 ---
 
 <div class="max-w-xl">
@@ -21,21 +42,32 @@ import Upload from "../icons/Upload.astro";
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Open to Work</Badge>
+      <Badge> Open to Work </Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-400 sm:text-5xl dark:text-white"
+    aria-label="helloMessage"
   >
-    Hey, I'm Pablo
+    {heroItems.find((item) => item.key === "helloMessage")?.key}
   </h1>
   <p
-  class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold text-white dark:text-gray-400"
->
-  Over 1 year of experience as a <strong class="notranslate">
-    Software Developer, graduated from the National Technological University.
-  </strong> I'm from Córdoba, Argentina 🇦🇷. I'm specialized in developing unique applications and continuous learning.
-</p>
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold text-white dark:text-gray-400"
+  >
+    <span aria-label="experienceMessage">
+      {heroItems.find((item) => item.key === "experienceMessage")?.key}
+    </span>
+    <strong class="notranslate" aria-label="roleDescription">
+      {heroItems.find((item) => item.key === "roleDescription")?.key}
+    </strong>
+    <span aria-label="fromLocation">
+      {heroItems.find((item) => item.key === "fromLocation")?.key} 🇦🇷
+    </span>
+    <span aria-label="specializedMessage">
+      {heroItems.find((item) => item.key === "specializedMessage")?.key}
+    </span>
+  </p>
+
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialMedia href="https://github.com/PJMonticoli">
       <GitHub class="size-4" />
@@ -49,7 +81,9 @@ import Upload from "../icons/Upload.astro";
     </SocialMedia>
     <SocialMedia href="mailto:pablo_monticoli@hotmail.com">
       <MailIcon class="size-4" />
-      Contact me
+      <span aria-label="mailText">
+        {heroItems.find((item) => item.key === "mailText")?.key}
+      </span>
     </SocialMedia>
     <SocialMedia
       href="/MonticoliPabloResume.pdf"
@@ -60,3 +94,49 @@ import Upload from "../icons/Upload.astro";
     </SocialMedia>
   </nav>
 </div>
+
+<script>
+  interface Translations {
+    [key: string]: string;
+  }
+
+  const translations: { [key: string]: Promise<Translations> } = {
+    en: fetch("/locales/en/translation.json").then((response) =>
+      response.json()
+    ),
+    es: fetch("/locales/es/translation.json").then((response) =>
+      response.json()
+    ),
+  };
+
+  function loadLanguage(lang: string) {
+    translations[lang].then((translations: Translations) => {
+      document.querySelectorAll("[aria-label]").forEach((el) => {
+        const key = (el as HTMLElement).getAttribute("aria-label");
+        if (key) {
+          (el as HTMLElement).textContent = translations[key] || key;
+        }
+      });
+    });
+  }
+
+  function handleLanguageChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const isChecked = target.checked;
+    const lang = isChecked ? "es" : "en";
+    localStorage.setItem("language", lang);
+    loadLanguage(lang);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("language") || "en";
+    const switchElement = document.getElementById(
+      "languageSwitch"
+    ) as HTMLInputElement;
+    if (switchElement) {
+      switchElement.checked = savedLang === "es";
+      loadLanguage(savedLang);
+    }
+    switchElement?.addEventListener("change", handleLanguageChange);
+  });
+</script>
