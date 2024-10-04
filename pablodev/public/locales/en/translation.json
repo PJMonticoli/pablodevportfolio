@@ -1,9 +1,9 @@
 {
   "personalImageAlt": "Pablo Monticoli",
-  "openToWorkBadge": "Open to Work",
+  "openToWorkBadge": "Working at Hotaka iKhodi",
   "helloMessage": "Hey, I'm Pablo",
   "experienceMessage": "Over 1 year of experience as a ",
-  "roleDescription": "Software Developer, graduated from the National Technological University.",
+  "roleDescription": "Software Developer and Data Analyst, graduated from the National Technological University.",
   "fromLocation": "I'm from Córdoba, Argentina 🇦🇷.",
   "specializedMessage": "I'm specialized in developing unique applications and continuous learning.",
   "mailText": "Contact me",
@@ -29,15 +29,18 @@
   "navContact": "Contact",
   "footerMessage": "Web-Site Developed by Pablo Monticoli ",
 
-  "date1": "August 2023 - Present",
-  "exdescription1": "Currently doing internships in the Systems Area of the company. Working with .NET, C#, SQL/NoSQL, Angular and Python. I’m involved in application development and database management, collaborating on process optimization and technical issue resolution.",
+  "date1": "October 2024 - Present",
+  "exdescription1": "Currently working as a Software Developer & Data Analyst at Hotaka Ikhodi. I specialize in Python, Power BI, Azure Databricks, Apache Spark and providing support in ERP Odoo. My role involves working with relational and non-relational databases, as well as managing ETL processes and cloud data to deliver actionable insights and drive business performance.",
 
-  "date2": "July 2024 - Present",
-  "exdescription2": "Trained in data analysis, focusing on exploring, interpreting, and visualizing data for decision-making. Skilled in accessing raw data, filtering, and extracting relevant information. Proficient in creating clear and accessible reports and dashboards using Qlik Sense, Power BI and SQL.",
+  "date2": "August 2023 - October 2024",
+  "exdescription2": "I completed over one year of internships in the Systems Area of the company. Working with .NET, C#, SQL/NoSQL, Angular and Python. I’m involved in application development and database management, collaborating on process optimization and technical issue resolution.",
 
-  "date3": "April 2024 - August 2024",
-  "exdescription3": "Currently participating in the trainning course at Hotaka Ikhodi, focusing on advanced software architectures and development methodologies. The course covers SOA, DDD, CQRS, SOLID principles, IoC, event sourcing, unit testing, TDD, BDD, and CI, providing practical skills and best practices for robust software development. We have been working with Spring Boot, Java, Kotlin, and Vue.js.",
+  "date3": "July 2024 - Present",
+  "exdescription3": "Trained in data analysis, focusing on exploring, interpreting, and visualizing data for decision-making. Skilled in accessing raw data, filtering, and extracting relevant information. Proficient in creating clear and accessible reports and dashboards using Qlik Sense, Power BI and SQL.",
 
-  "date4": "February 2023 - August 2023",
-  "exdescription4": "Developed an online store for a chocolate shop, focusing on optimizing user experience and enhancing purchase functionality. Designed and implemented a user-friendly e-commerce platform to improve online shopping. Utilized responsive design to ensure cross-device functionality and incorporated features such as product filtering, advanced search, and personalized recommendations. Streamlined the checkout process by optimizing the shopping cart, order summary, and integrating multiple payment options to facilitate a smooth purchasing experience."
+  "date4": "April 2024 - August 2024",
+  "exdescription4": "Currently participating in the trainning course at Hotaka Ikhodi, focusing on advanced software architectures and development methodologies. The course covers SOA, DDD, CQRS, SOLID principles, IoC, event sourcing, unit testing, TDD, BDD, and CI, providing practical skills and best practices for robust software development. We have been working with Spring Boot, Java, Kotlin, and Vue.js.",
+
+  "date5": "February 2023 - August 2023",
+  "exdescription5": "Developed an online store for a chocolate shop, focusing on optimizing user experience and enhancing purchase functionality. Designed and implemented a user-friendly e-commerce platform to improve online shopping. Utilized responsive design to ensure cross-device functionality and incorporated features such as product filtering, advanced search, and personalized recommendations. Streamlined the checkout process by optimizing the shopping cart, order summary, and integrating multiple payment options to facilitate a smooth purchasing experience."
 }
