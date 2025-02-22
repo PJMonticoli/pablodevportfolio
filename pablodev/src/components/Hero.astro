@@ -33,7 +33,7 @@ const heroItems = [
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/avatar.jpg"
+      src="/avatar.webp"
       alt={personalImageAlt}
     />
     <a
@@ -102,10 +102,10 @@ const heroItems = [
 
   const translations: { [key: string]: Promise<Translations> } = {
     en: fetch("/locales/en/translation.json").then((response) =>
-      response.json()
+      response.json(),
     ),
     es: fetch("/locales/es/translation.json").then((response) =>
-      response.json()
+      response.json(),
     ),
   };
 
@@ -131,7 +131,7 @@ const heroItems = [
   document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem("language") || "en";
     const switchElement = document.getElementById(
-      "languageSwitch"
+      "languageSwitch",
     ) as HTMLInputElement;
     if (switchElement) {
       switchElement.checked = savedLang === "es";

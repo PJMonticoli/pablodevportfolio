@@ -13,7 +13,8 @@ import SpringIcon from "../icons/Spring.astro";
 import VueIcon from "../icons/vue.astro";
 import MongoIcon from "../icons/MongoDB.astro";
 import NodeIcon from "../icons/Node.astro";
-
+import SqlIcon from "../icons/Sql.astro";
+import NetIcon from "../icons/net.astro";
 const TAGS = {
   ANGULAR: {
     name: "Angular",
@@ -75,6 +76,16 @@ const TAGS = {
     class: "bg-black text-white",
     icon: NodeIcon,
   },
+  SqlIcon: {
+    name: "Sql",
+    class: "bg-[#003159] text-white",
+    icon: SqlIcon,
+  },
+  NetIcon: {
+    name: "Net",
+    class: "bg-[#003159] text-white",
+    icon: NetIcon,
+  },
 };
 
 const PROJECTS = [
@@ -95,6 +106,13 @@ const PROJECTS = [
   {
     titlekey: "title3",
     descriptionkey: "description3",
+    github: "https://github.com/PJMonticoli/netprojectpallets",
+    image: "/netproject.webp",
+    tags: [TAGS.SqlIcon, TAGS.NetIcon],
+  },
+  {
+    titlekey: "title5",
+    descriptionkey: "description5",
     github: "https://github.com/PJMonticoli/dockwitcher-app.git",
     image: "/dockwitcher.webp",
     tags: [TAGS.VUE, TAGS.SPRING, TAGS.JAVA, TAGS.MongoDB],
@@ -173,10 +191,10 @@ const PROJECTS = [
 
   const translations: { [key: string]: Promise<Translations> } = {
     en: fetch("/locales/en/translation.json").then((response) =>
-      response.json()
+      response.json(),
     ),
     es: fetch("/locales/es/translation.json").then((response) =>
-      response.json()
+      response.json(),
     ),
   };
 
@@ -203,7 +221,7 @@ const PROJECTS = [
   document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem("language") || "en";
     const switchElement = document.getElementById(
-      "languageSwitch"
+      "languageSwitch",
     ) as HTMLInputElement;
     if (switchElement) {
       switchElement.checked = savedLang === "es";
