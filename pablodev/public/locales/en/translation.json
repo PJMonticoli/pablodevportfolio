@@ -10,7 +10,7 @@
   "projectTitle": "Projects",
   "buttonText": "Code",
   "title1": "Front-End with Angular",
-  "description1": "Online store for a chocolate shop, there you can you can explore and purchase products. Become a member to enjoy special benefits. If you're the shop owner, you can also access detailed sales reports and analytics.",
+  "description1": "An online store for a chocolate shop where customers can browse and purchase products. By becoming a member, users gain access to exclusive benefits. Shop owners can manage inventory, set up promotions and access detailed sales reports and analytics.",
 
   "title2": " Back-End with NodeJs",
   "description2": "The backend API for the online chocolate shop was developed using Node.js (Express.js Framework) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store.",

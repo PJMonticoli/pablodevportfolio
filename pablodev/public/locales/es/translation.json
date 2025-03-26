@@ -10,7 +10,7 @@
   "projectTitle": "Proyectos",
   "buttonText": "Código",
   "title1": "Front-End con Angular",
-  "description1": "Tienda en línea para una chocolatería, allí se puede explorar y comprar productos. Conviertase en miembro para disfrutar de beneficios especiales. Si eres el propietario de la tienda, también puedes acceder a informes detallados de ventas y análisis.",
+  "description1": "Tienda online para una chocolatería donde los clientes pueden explorar y comprar productos. Al convertirse en miembros socios, los usuarios acceden a beneficios exclusivos. Los dueños de la tienda pueden gestionar el inventario, crear promociones  y acceder a informes de ventas y análisis detallados.",
 
   "title2": "Back-End con Node.js",
   "description2": "La API de backend para la tienda de chocolate en línea se desarrolló usando Node.js (Framework Express.js) con el motor de bases de datos MySQL. Esta robusta y escalable aplicación del lado del servidor admite varias funcionalidades necesarias para ejecutar una tienda en línea dinámica e interactiva.",
