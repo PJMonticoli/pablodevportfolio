@@ -1,8 +1,8 @@
 {
   "personalImageAlt": "Pablo Monticoli",
-  "openToWorkBadge": "Working at Hotaka iKhodi",
+  "openToWorkBadge": "Working at Allata",
   "helloMessage": "Hey, I'm Pablo",
-  "experienceMessage": "Over 1 year of experience as a ",
+  "experienceMessage": "Over 2 years of experience as a ",
   "roleDescription": "Software Developer and Data Analyst, graduated from the National Technological University.",
   "fromLocation": "I'm from Córdoba, Argentina 🇦🇷.",
   "specializedMessage": "I'm specialized in developing unique applications and continuous learning.",
@@ -10,7 +10,7 @@
   "projectTitle": "Projects",
   "buttonText": "Code",
   "title1": "Front-End with Angular",
-  "description1": "Online store for a chocolate shop, there you can you can explore and purchase products. Become a member to enjoy special benefits. If you're the shop owner, you can also access detailed sales reports and analytics.",
+  "description1": "An online store for a chocolate shop where customers can browse and purchase products. By becoming a member, users gain access to exclusive benefits. Shop owners can manage inventory, set up promotions and access detailed sales reports and analytics.",
 
   "title2": " Back-End with NodeJs",
   "description2": "The backend API for the online chocolate shop was developed using Node.js (Express.js Framework) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store.",
@@ -32,18 +32,21 @@
   "navContact": "Contact",
   "footerMessage": "Web-Site Developed by Pablo Monticoli ",
 
-  "date1": "October 2024 - Present",
-  "exdescription1": "Experienced Software Developer & Data Analyst with expertise in full-stack development and business intelligence. Leading development of Python/Django applications and Vue.js frontends while architecting robust data solutions using MongoDB. Specialized in ETL optimization and cloud data management, delivering actionable insights through Power BI dashboards. Strong background in ERP systems, including custom Odoo module development and technical support to enhance business operations.",
+  "date1": "May 2025 - Present",
+  "exdescription1": "Currently working at Allata as a Senior Consultant in Technology & Cloud. My responsibilities include developing software solutions tailored to client needs while collaborating within cross-functional teams. I contribute to internal initiatives such as recruitment, training, and tech innovation, and ensure high ethical standards and professional conduct in every project. I also engage in knowledge sharing and continuous learning, always aiming to deliver value through integrity, teamwork, and accountability.",
 
-  "date2": "August 2023 - October 2024",
-  "exdescription2": "I completed over one year of internships in the Systems Area of the company. Working with .NET, C#, SQL/NoSQL, Angular and Python. I’m involved in application development and database management, collaborating on process optimization and technical issue resolution.",
+  "date2": "October 2024 - May 2025",
+  "exdescription2": "Experienced Software Developer & Data Analyst with expertise in full-stack development and business intelligence. Leading development of Python/Django applications and Vue.js frontends while architecting robust data solutions using MongoDB. Specialized in ETL optimization and cloud data management, delivering actionable insights through Power BI dashboards. Strong background in ERP systems, including custom Odoo module development and technical support to enhance business operations.",
 
-  "date3": "July 2024 - Present",
-  "exdescription3": "Trained in data analysis, focusing on exploring, interpreting, and visualizing data for decision-making. Skilled in accessing raw data, filtering, and extracting relevant information. Proficient in creating clear and accessible reports and dashboards using Qlik Sense, Power BI and SQL.",
+  "date3": "August 2023 - October 2024",
+  "exdescription3": "I completed over one year of internships in the Systems Area of the company. Working with .NET, C#, SQL/NoSQL, Angular and Python. I’m involved in application development and database management, collaborating on process optimization and technical issue resolution.",
 
-  "date4": "April 2024 - August 2024",
-  "exdescription4": "Currently participating in the trainning course at Hotaka Ikhodi, focusing on advanced software architectures and development methodologies. The course covers SOA, DDD, CQRS, SOLID principles, IoC, event sourcing, unit testing, TDD, BDD, and CI, providing practical skills and best practices for robust software development. We have been working with Spring Boot, Java, Kotlin, and Vue.js.",
+  "date4": "July 2024 - October 2024",
+  "exdescription4": "Trained in data analysis, focusing on exploring, interpreting, and visualizing data for decision-making. Skilled in accessing raw data, filtering, and extracting relevant information. Proficient in creating clear and accessible reports and dashboards using Qlik Sense, Power BI and SQL.",
 
-  "date5": "February 2023 - August 2023",
-  "exdescription5": "Developed an online store for a chocolate shop, focusing on optimizing user experience and enhancing purchase functionality. Designed and implemented a user-friendly e-commerce platform to improve online shopping. Utilized responsive design to ensure cross-device functionality and incorporated features such as product filtering, advanced search, and personalized recommendations. Streamlined the checkout process by optimizing the shopping cart, order summary, and integrating multiple payment options to facilitate a smooth purchasing experience."
+  "date5": "April 2024 - August 2024",
+  "exdescription5": "Currently participating in the trainning course at Hotaka Ikhodi, focusing on advanced software architectures and development methodologies. The course covers SOA, DDD, CQRS, SOLID principles, IoC, event sourcing, unit testing, TDD, BDD, and CI, providing practical skills and best practices for robust software development. We have been working with Spring Boot, Java, Kotlin, and Vue.js.",
+
+  "date6": "February 2023 - August 2023",
+  "exdescription6": "Developed an online store for a chocolate shop, focusing on optimizing user experience and enhancing purchase functionality. Designed and implemented a user-friendly e-commerce platform to improve online shopping. Utilized responsive design to ensure cross-device functionality and incorporated features such as product filtering, advanced search, and personalized recommendations. Streamlined the checkout process by optimizing the shopping cart, order summary, and integrating multiple payment options to facilitate a smooth purchasing experience."
 }

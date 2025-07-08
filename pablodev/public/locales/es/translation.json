@@ -2,7 +2,7 @@
   "personalImageAlt": "Pablo Monticoli",
   "openToWorkBadge": "Trabajando en Hotaka iKhodi",
   "helloMessage": "Hola, soy Pablo",
-  "experienceMessage": "Más de 1 año de experiencia como ",
+  "experienceMessage": "Más de 2 años de experiencia como ",
   "roleDescription": "Desarrollador de Software y Analista de Datos, graduado de la Universidad Tecnológica Nacional.",
   "fromLocation": "Soy de Córdoba, Argentina 🇦🇷.",
   "specializedMessage": "Estoy especializado en el desarrollo de aplicaciones únicas y en el aprendizaje continuo.",
@@ -10,7 +10,7 @@
   "projectTitle": "Proyectos",
   "buttonText": "Código",
   "title1": "Front-End con Angular",
-  "description1": "Tienda en línea para una chocolatería, allí se puede explorar y comprar productos. Conviertase en miembro para disfrutar de beneficios especiales. Si eres el propietario de la tienda, también puedes acceder a informes detallados de ventas y análisis.",
+  "description1": "Tienda online para una chocolatería donde los clientes pueden explorar y comprar productos. Al convertirse en miembros socios, los usuarios acceden a beneficios exclusivos. Los dueños de la tienda pueden gestionar el inventario, crear promociones  y acceder a informes de ventas y análisis detallados.",
 
   "title2": "Back-End con Node.js",
   "description2": "La API de backend para la tienda de chocolate en línea se desarrolló usando Node.js (Framework Express.js) con el motor de bases de datos MySQL. Esta robusta y escalable aplicación del lado del servidor admite varias funcionalidades necesarias para ejecutar una tienda en línea dinámica e interactiva.",
@@ -32,18 +32,21 @@
   "navContact": "Contacto",
   "footerMessage": "Página Web Desarrollada por Pablo Monticoli",
 
-  "date1": " Octubre 2024 - Present",
-  "exdescription1": "Desarrollador de Software y Analista de Datos con experiencia en desarrollo full-stack e inteligencia empresarial. Liderando desarrollo de aplicaciones en Python/Django y frontends en Vue.js mientras diseño soluciones robustas de datos utilizando MongoDB. Especializado en optimización de procesos ETL y gestión de datos en la nube, proporcionando insights accionables a través de dashboards en Power BI. Sólida experiencia en sistemas ERP, incluyendo desarrollo de módulos personalizados y soporte técnico en Odoo para mejorar operaciones empresariales.",
+  "date1": " Mayo 2025 - Presente",
+  "exdescription1": "Actualmente trabajo en Allata como Consultor Senior en Tecnología y Cloud. Me dedico a desarrollar soluciones de software adaptadas a las necesidades del cliente, colaborando con equipos multidisciplinarios. Participo en iniciativas internas como reclutamiento, formación e innovación tecnológica, manteniendo altos estándares éticos y una conducta profesional en cada proyecto. Además, promuevo el aprendizaje continuo y el intercambio de conocimientos, con el objetivo de aportar valor a través de la integridad, el trabajo en equipo y la responsabilidad.",
 
-  "date2": " Agosto 2023 - Octubre 2024",
-  "exdescription2": "Realice prácticas durante mas de 1 año en el Área de Sistemas de la empresa. Trabajando con .NET, C#, SQL/NoSQL,Angular y Python. Involucrado en el desarrollo de aplicaciones y la gestión de bases de datos. Colaborando en la optimización de procesos y la resolución de cuestiones técnicas.",
+  "date2": " Octubre 2024 - Mayo 2025",
+  "exdescription2": "Desarrollador de Software y Analista de Datos con experiencia en desarrollo full-stack e inteligencia empresarial. Liderando desarrollo de aplicaciones en Python/Django y frontends en Vue.js mientras diseño soluciones robustas de datos utilizando MongoDB. Especializado en optimización de procesos ETL y gestión de datos en la nube, proporcionando insights accionables a través de dashboards en Power BI. Sólida experiencia en sistemas ERP, incluyendo desarrollo de módulos personalizados y soporte técnico en Odoo para mejorar operaciones empresariales.",
 
-  "date3": "Julio 2024 - Presente",
-  "exdescription3": "Capacitación en análisis de datos, con enfoque en el acceso, recolección, filtrado, limpieza y exploración de datos. Creación de informes y visualización de datos, presentación clara y efectiva de la información mediante Qlik Sense, Power BI y SQL.",
+  "date3": " Agosto 2023 - Octubre 2024",
+  "exdescription3": "Realice prácticas durante mas de 1 año en el Área de Sistemas de la empresa. Trabajando con .NET, C#, SQL/NoSQL,Angular y Python. Involucrado en el desarrollo de aplicaciones y la gestión de bases de datos. Colaborando en la optimización de procesos y la resolución de cuestiones técnicas.",
 
-  "date4": "  Abril 2024 - Agosto 2024",
-  "exdescription4": "Actualmente participo en el Bootcamp de Programación en Hotaka Ikhodi, enfocado en arquitecturas de software avanzadas y metodologías de desarrollo. El curso abarca SOA, DDD, CQRS, principios SOLID, IoC, abastecimiento de eventos, pruebas de unidad, TDD, BDD e CI, proporcionando habilidades prácticas y mejores prácticas para un desarrollo de software robusto. Hemos estado trabajando con Spring Boot, Java, Kotlin y Vue.js.",
+  "date4": "Julio 2024 - Octubre 2024",
+  "exdescription4": "Capacitación en análisis de datos, con enfoque en el acceso, recolección, filtrado, limpieza y exploración de datos. Creación de informes y visualización de datos, presentación clara y efectiva de la información mediante Qlik Sense, Power BI y SQL.",
 
-  "date5": " Febrero 2023 - Agosto 2023",
-  "exdescription5": "Desarrollé una tienda en línea para una chocolatería, enfocándome en optimizar la experiencia del usuario y mejorar la funcionalidad de compra. Diseñé e implementé una plataforma de comercio electrónico fácil de usar para mejorar las compras en línea. Utilicé un diseño responsivo para garantizar la funcionalidad en diferentes dispositivos e incorporé características como filtrado de productos, búsqueda avanzada y recomendaciones personalizadas. Optimicé el proceso de pago al mejorar el carrito de compras, el resumen del pedido e integrar múltiples opciones de pago para facilitar una experiencia de compra fluida."
+  "date5": "  Abril 2024 - Agosto 2024",
+  "exdescription5": "Actualmente participo en el Bootcamp de Programación en Hotaka Ikhodi, enfocado en arquitecturas de software avanzadas y metodologías de desarrollo. El curso abarca SOA, DDD, CQRS, principios SOLID, IoC, abastecimiento de eventos, pruebas de unidad, TDD, BDD e CI, proporcionando habilidades prácticas y mejores prácticas para un desarrollo de software robusto. Hemos estado trabajando con Spring Boot, Java, Kotlin y Vue.js.",
+
+  "date6": " Febrero 2023 - Agosto 2023",
+  "exdescription6": "Desarrollé una tienda en línea para una chocolatería, enfocándome en optimizar la experiencia del usuario y mejorar la funcionalidad de compra. Diseñé e implementé una plataforma de comercio electrónico fácil de usar para mejorar las compras en línea. Utilicé un diseño responsivo para garantizar la funcionalidad en diferentes dispositivos e incorporé características como filtrado de productos, búsqueda avanzada y recomendaciones personalizadas. Optimicé el proceso de pago al mejorar el carrito de compras, el resumen del pedido e integrar múltiples opciones de pago para facilitar una experiencia de compra fluida."
 }
