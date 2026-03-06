@@ -15,6 +15,8 @@ import MongoIcon from "../icons/MongoDB.astro";
 import NodeIcon from "../icons/Node.astro";
 import SqlIcon from "../icons/Sql.astro";
 import NetIcon from "../icons/net.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+
 const TAGS = {
   ANGULAR: {
     name: "Angular",
@@ -50,6 +52,11 @@ const TAGS = {
     name: "TypeScript",
     class: "bg-[#003159] text-white",
     icon: TypeScriptIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#323330] text-[#F7DF1E]",
+    icon: JavaScriptIcon,
   },
   JAVA: {
     name: "Java",
@@ -111,18 +118,18 @@ const PROJECTS = [
     tags: [TAGS.SqlIcon, TAGS.NetIcon],
   },
   {
+    titlekey: "title4",
+    descriptionkey: "description4",
+    github: "https://github.com/PJMonticoli/pasta-studio",
+    image: "/pastastudio.webp",
+    tags: [TAGS.JAVASCRIPT,TAGS.HTML, TAGS.CSS],
+  },
+  {
     titlekey: "title5",
     descriptionkey: "description5",
     github: "https://github.com/PJMonticoli/dockwitcher-app.git",
     image: "/dockwitcher.webp",
     tags: [TAGS.VUE, TAGS.SPRING, TAGS.JAVA, TAGS.MongoDB],
-  },
-  {
-    titlekey: "title4",
-    descriptionkey: "description4",
-    github: "https://github.com/PJMonticoli/FrontEndHelphub.git",
-    image: "/fullstackproject.webp",
-    tags: [TAGS.ANGULAR, TAGS.SUPABASE, TAGS.BOOTSTRAP],
   },
 ];
 ---
