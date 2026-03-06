@@ -2,31 +2,21 @@
 import ThemeToggle from "../components/ThemeToggle.astro";
 
 const navItems = [
-  {
-    key: "navExperience",
-    url: "/#experience",
-  },
-  {
-    key: "navProject",
-    url: "/#projects",
-  },
-  {
-    key: "navContact",
-    url: "mailto:pablo_monticoli@hotmail.com",
-  },
+  { key: "navExperience", url: "/#experience" },
+  { key: "navProject", url: "/#projects" },
+  { key: "navContact", url: "mailto:pablo_monticoli@hotmail.com" },
 ];
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-400 justify-center items-center mr-20"
+    id="main-nav"
+    class="flex px-3 text-sm font-medium rounded-full text-gray-300 justify-center items-center mr-20 transition-all duration-300"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block px-3 py-2 transition-colors hover:text-yellow-400"
           aria-label={link.key}
           href={link.url}
         >
@@ -37,9 +27,7 @@ const navItems = [
     <ThemeToggle />
   </nav>
 
-  <nav
-    class="fixed top-0 right-0 z-10 flex items-center mt-4 mr-2 text-sm font-medium rounded-full text-gray-600 dark:text-gray-400"
-  >
+  <nav class="fixed top-0 right-0 z-10 flex items-center mt-4 mr-3">
     <div class="checkbox-wrapper-35">
       <input type="checkbox" id="languageSwitch" class="switch" />
       <label for="languageSwitch">
@@ -54,95 +42,79 @@ const navItems = [
 </header>
 
 <script>
-  // Definir tipos explícitos
   interface Translations {
     [key: string]: string;
   }
 
-  // Cargar traducciones
   const translations: { [key: string]: Promise<Translations> } = {
-    en: fetch("/locales/en/translation.json").then((response) =>
-      response.json()
-    ),
-    es: fetch("/locales/es/translation.json").then((response) =>
-      response.json()
-    ),
+    en: fetch("/locales/en/translation.json").then((r) => r.json()),
+    es: fetch("/locales/es/translation.json").then((r) => r.json()),
   };
 
-  // Cargar el idioma seleccionado
   function loadLanguage(lang: string) {
-    translations[lang].then((translations: Translations) => {
+    translations[lang].then((trans: Translations) => {
       document.querySelectorAll("[aria-label]").forEach((el) => {
         const key = (el as HTMLElement).getAttribute("aria-label");
-        if (key) {
-          (el as HTMLElement).textContent = translations[key] || key;
+        if (key && trans[key]) {
+          (el as HTMLElement).textContent = trans[key];
         }
       });
     });
   }
 
-  let language = "en";
-
   function handleLanguageChange(event: Event) {
     const target = event.target as HTMLInputElement;
-
-    const isChecked = target.checked;
-
-    language = isChecked ? "es" : "en";
-
-    localStorage.setItem("language", language);
-
-    loadLanguage(language);
+    const lang = target.checked ? "es" : "en";
+    localStorage.setItem("language", lang);
+    loadLanguage(lang);
   }
 
-  // Inicializar idioma en la carga de la página
   document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem("language") || "en";
-    const switchElement = document.getElementById(
-      "languageSwitch"
-    ) as HTMLInputElement;
-    if (switchElement) {
-      switchElement.checked = savedLang === "es";
+    const switchEl = document.getElementById("languageSwitch") as HTMLInputElement;
+    if (switchEl) {
+      switchEl.checked = savedLang === "es";
       loadLanguage(savedLang);
     }
-    switchElement?.addEventListener("change", handleLanguageChange);
+    switchEl?.addEventListener("change", handleLanguageChange);
+
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        nav?.classList.add(
+          "shadow-lg",
+          "backdrop-blur-md",
+          "bg-white/5",
+          "ring-1",
+          "ring-white/10",
+          "px-4"
+        );
+      } else {
+        nav?.classList.remove(
+          "shadow-lg",
+          "backdrop-blur-md",
+          "bg-white/5",
+          "ring-1",
+          "ring-white/10",
+          "px-4"
+        );
+      }
+    });
   });
 </script>
 
 <style>
-  nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
-  }
-
-  @keyframes nav-shadown {
-    to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
-    }
-  }
-  .checkbox-wrapper-35 .switch {
-    display: none;
-  }
+  /* Language switch  */
+  .checkbox-wrapper-35 .switch { display: none; }
 
   .checkbox-wrapper-35 .switch + label {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
     color: #fff;
     cursor: pointer;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 15px;
     position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
 
@@ -153,11 +125,10 @@ const navItems = [
   }
 
   .checkbox-wrapper-35 .switch + label::before {
-    background-color: #05012c;
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 500px;
     height: 15px;
     margin-right: 8px;
-    -webkit-transition: background-color 0.125s ease-out;
     transition: background-color 0.125s ease-out;
     width: 25px;
   }
@@ -165,20 +136,11 @@ const navItems = [
   .checkbox-wrapper-35 .switch + label::after {
     background-color: #fff;
     border-radius: 13px;
-    box-shadow:
-      0 3px 1px 0 rgba(37, 34, 71, 0.05),
-      0 2px 2px 0 rgba(37, 34, 71, 0.1),
-      0 3px 3px 0 rgba(37, 34, 71, 0.05);
     height: 13px;
     left: 1px;
     position: absolute;
     top: 1px;
-    -webkit-transition: -webkit-transform 0.125s ease-out;
-    transition: -webkit-transform 0.125s ease-out;
     transition: transform 0.125s ease-out;
-    transition:
-      transform 0.125s ease-out,
-      -webkit-transform 0.125s ease-out;
     width: 13px;
   }
 
@@ -201,36 +163,17 @@ const navItems = [
     left: 0;
     position: absolute;
     top: 0;
-    -webkit-transition:
-      opacity 0.125s ease-out,
-      -webkit-transform 0.125s ease-out;
-    transition:
-      opacity 0.125s ease-out,
-      -webkit-transform 0.125s ease-out;
-    transition:
-      transform 0.125s ease-out,
-      opacity 0.125s ease-out;
-    transition:
-      transform 0.125s ease-out,
-      opacity 0.125s ease-out,
-      -webkit-transform 0.125s ease-out;
+    transition: opacity 0.125s ease-out, transform 0.125s ease-out;
   }
 
   .checkbox-wrapper-35 .switch + label .switch-x-unchecked {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
   }
 
   .checkbox-wrapper-35 .switch + label .switch-x-checked {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
-  }
-
-  .checkbox-wrapper-35 .switch + label .switch-x-hiddenlabel {
-    position: absolute;
-    visibility: hidden;
   }
 
   .checkbox-wrapper-35 .switch:checked + label::before {
@@ -238,19 +181,16 @@ const navItems = [
   }
 
   .checkbox-wrapper-35 .switch:checked + label::after {
-    -webkit-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0);
   }
 
   .checkbox-wrapper-35 .switch:checked + label .switch-x-unchecked {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
 
   .checkbox-wrapper-35 .switch:checked + label .switch-x-checked {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
   }
 </style>
