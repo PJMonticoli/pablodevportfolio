@@ -1,6 +1,7 @@
 
 # Portfolio desarrollado con Astro
-![image](https://github.com/user-attachments/assets/89471379-e751-4454-be86-0c5d623e31a8)
+<img width="1157" height="892" alt="Captura de pantalla 2026-04-26 195021" src="https://github.com/user-attachments/assets/cc3ac53e-d8ad-4465-802b-2da507f388e3" />
+
 
 
 
