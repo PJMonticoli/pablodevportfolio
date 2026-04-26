@@ -2,10 +2,10 @@
   "personalImageAlt": "Pablo Monticoli",
   "openToWorkBadge": "Working at Allata",
   "helloMessage": "Hey, I'm Pablo",
-  "experienceMessage": "Over 3 years of experience as a ",
-  "roleDescription": "Full Stack Developer & Data Analyst.",
+  "experienceMessage": "Full Stack Developer with 3+ years of experience in ",
+  "roleDescription": "AI-powered solutions.",
   "fromLocation": "Based in Córdoba, Argentina 🇦🇷.",
-  "specializedMessage": "Specialized in building scalable web applications and turning data into real business value.",
+  "specializedMessage": "I build scalable web applications and leverage AI to deliver real business impact.",
   "mailText": "Contact me",
   "projectTitle": "Projects",
   "buttonText": "Code",
@@ -33,7 +33,7 @@
   "footerMessage": "Web-Site Developed by Pablo Monticoli ",
 
   "date1": "May 2025 - Present",
-  "exdescription1": "Currently working at Allata as a Senior Consultant in Technology & Cloud. My responsibilities include developing software solutions tailored to client needs while collaborating within cross-functional teams. I contribute to internal initiatives such as recruitment, training, and tech innovation, and ensure high ethical standards and professional conduct in every project. I also engage in knowledge sharing and continuous learning, always aiming to deliver value through integrity, teamwork, and accountability.",
+  "exdescription1": "Currently working at Allata as a Lead Consultant in AI & Technology. I design and deliver AI-powered, full-stack solutions across diverse client environments, leveraging technologies such as Vue.js, Angular, Node.js, Python, and Django. I specialize in integrating Agentic AI systems, RAG pipelines, and automation tools (LangChain, LangGraph, n8n) to enhance scalability, efficiency, and solution quality. Beyond development, I mentor engineers, contribute to estimation and delivery strategy, and collaborate closely with stakeholders to ensure successful project outcomes. Previously, as a Senior Consultant, I delivered cloud-based solutions for U.S. enterprise clients, focusing on system integration, performance, and the adoption of AI-driven development practices.",
 
   "date2": "October 2024 - May 2025",
   "exdescription2": "Experienced Software Developer & Data Analyst with expertise in full-stack development and business intelligence. Leading development of Python/Django applications and Vue.js frontends while architecting robust data solutions using MongoDB. Specialized in ETL optimization and cloud data management, delivering actionable insights through Power BI dashboards. Strong background in ERP systems, including custom Odoo module development and technical support to enhance business operations.",

@@ -2,10 +2,10 @@
   "personalImageAlt": "Pablo Monticoli",
   "openToWorkBadge": "Trabajando en Hotaka iKhodi",
   "helloMessage": "Hola, soy Pablo",
-  "experienceMessage": "Más de 3 años de experiencia como ",
-  "roleDescription": "Full Stack Developer & Analista de Datos.",
+  "experienceMessage": "Desarrollador Full Stack con más de 3 años de experiencia en ",
+  "roleDescription": "soluciones impulsadas por inteligencia artificial.",
   "fromLocation": "Basado en Córdoba, Argentina 🇦🇷.",
-  "specializedMessage": "Especializado en el desarrollo de aplicaciones web escalables y en transformar datos en valor real para el negocio.",
+  "specializedMessage": "Desarrollo aplicaciones web escalables y utilizo IA para generar impacto real en el negocio.",
   "mailText": "Contáctame",
   "projectTitle": "Proyectos",
   "buttonText": "Código",
@@ -17,7 +17,7 @@
 
   "title3": ".NET Framework Project",
   "description3": "Sistema de Gestión de Pallets - Aplicación desarrollada en .NET Framework para la gestión de operaciones logísticas de pallets. El sistema realiza seguimiento de movimientos, monitorea condiciones y gestiona relaciones con transportistas y clientes. Incluye seguimiento de inventario en tiempo real, informes automatizados y una interfaz intuitiva para agilizar las operaciones logísticas.",
-  
+
   "title4": "Pasta Studio — Landing Page de Lanzamiento",
   "description4": "Landing page para el lanzamiento de Pasta Studio®, un restaurante italiano contemporáneo en Córdoba, Argentina. Desarrollada con Vite y Vanilla JS, incluye contador regresivo en tiempo real, navegación scroll-snap, integración de Google Maps y diseño fiel al manual de marca. Desplegada en Netlify, optimizada para acceso vía QR.",
 
@@ -32,8 +32,8 @@
   "navContact": "Contacto",
   "footerMessage": "Página Web Desarrollada por Pablo Monticoli",
 
-  "date1": " Mayo 2025 - Presente",
-  "exdescription1": "Actualmente trabajo en Allata como Consultor Senior en Tecnología y Cloud. Me dedico a desarrollar soluciones de software adaptadas a las necesidades del cliente, colaborando con equipos multidisciplinarios. Participo en iniciativas internas como reclutamiento, formación e innovación tecnológica, manteniendo altos estándares éticos y una conducta profesional en cada proyecto. Además, promuevo el aprendizaje continuo y el intercambio de conocimientos, con el objetivo de aportar valor a través de la integridad, el trabajo en equipo y la responsabilidad.",
+  "date1": "Mayo 2025 - Presente",
+  "exdescription1": "Actualmente me desempeño en Allata como Lead Consultant en AI & Technology, donde diseño y desarrollo soluciones full-stack potenciadas con inteligencia artificial para distintos entornos de cliente, utilizando tecnologías como Vue.js, Angular, Node.js, Python y Django. Me especializo en la integración de sistemas de Agentic AI, pipelines RAG y herramientas de automatización (LangChain, LangGraph, n8n) para mejorar la escalabilidad, eficiencia y calidad de las soluciones. Además, mentoreo a otros desarrolladores, participo en estimaciones y estrategia de entrega, y colaboro estrechamente con stakeholders para asegurar resultados exitosos. Previamente, como Senior Consultant, desarrollé soluciones cloud para clientes enterprise en Estados Unidos, enfocándome en integración de sistemas, rendimiento y adopción de prácticas de desarrollo impulsadas por IA.",
 
   "date2": " Octubre 2024 - Mayo 2025",
   "exdescription2": "Desarrollador de Software y Analista de Datos con experiencia en desarrollo full-stack e inteligencia empresarial. Liderando desarrollo de aplicaciones en Python/Django y frontends en Vue.js mientras diseño soluciones robustas de datos utilizando MongoDB. Especializado en optimización de procesos ETL y gestión de datos en la nube, proporcionando insights accionables a través de dashboards en Power BI. Sólida experiencia en sistemas ERP, incluyendo desarrollo de módulos personalizados y soporte técnico en Odoo para mejorar operaciones empresariales.",
