@@ -12,7 +12,7 @@
   "title1": "Front-End with Angular",
   "description1": "An online store for a chocolate shop where customers can browse and purchase products. By becoming a member, users gain access to exclusive benefits. Shop owners can manage inventory, set up promotions and access detailed sales reports and analytics.",
 
-  "title2": " Back-End with NodeJs",
+  "title2": "Back-End with NodeJs",
   "description2": "The backend API for the online chocolate shop was developed using Node.js (Express.js Framework) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store.",
 
   "title3": ".NET Framework Project",
@@ -21,7 +21,7 @@
   "title4": "Pasta Studio — Pre-Launch Landing Page",
   "description4": "Landing page for the opening of Pasta Studio®, a contemporary Italian restaurant in Córdoba, Argentina. Built with Vite and Vanilla JS, featuring a real-time countdown, scroll-snap navigation, Google Maps integration and brand-aligned design. Deployed on Netlify, optimized for mobile QR code access.",
 
-  "title5": " Hotaka iKhodi Bootcamp Project",
+  "title5": "Hotaka iKhodi Bootcamp Project",
   "description5": "Dockwitcher is a web-based logistics platform streamlining transportation and loading operations for industrial sectors. The solution centralizes fleet and dock management, offers real-time tracking, and provides proactive notifications, enhancing logistics efficiency and security.",
   
   "knowMore": "Read More",

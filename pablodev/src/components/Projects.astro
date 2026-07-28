@@ -97,36 +97,51 @@ const TAGS = {
 
 const PROJECTS = [
   {
-    titlekey: "title1",
-    descriptionkey: "description1",
+    titleKey: "title1",
+    title: "Front-End with Angular",
+    descriptionKey: "description1",
+    description:
+      "An online store for a chocolate shop where customers can browse and purchase products. By becoming a member, users gain access to exclusive benefits. Shop owners can manage inventory, set up promotions and access detailed sales reports and analytics.",
     github: "https://github.com/PJMonticoli/FrontEndChocolateria.git",
     image: "/ecommerce.webp",
     tags: [TAGS.ANGULAR, TAGS.HTML, TAGS.CSS, TAGS.TYPESCRIPT, TAGS.BOOTSTRAP],
   },
   {
-    titlekey: "title2",
-    descriptionkey: "description2",
+    titleKey: "title2",
+    title: "Back-End with NodeJs",
+    descriptionKey: "description2",
+    description:
+      "The backend API for the online chocolate shop was developed using Node.js (Express.js Framework) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store.",
     github: "https://github.com/PJMonticoli/BackEndChocolateria.git",
     image: "/backendproject.webp",
     tags: [TAGS.NodeJs, TAGS.MYSQL],
   },
   {
-    titlekey: "title3",
-    descriptionkey: "description3",
+    titleKey: "title3",
+    title: ".NET Framework Project",
+    descriptionKey: "description3",
+    description:
+      "Pallet Management System - A .NET Framework application designed to manage pallet logistics operations. The system tracks pallet movements, monitors conditions, and manages relationships with transporters and clients. Features include real-time inventory tracking, automated reporting, and an intuitive interface for streamlined logistics operations.",
     github: "https://github.com/PJMonticoli/netprojectpallets",
     image: "/netproject.webp",
     tags: [TAGS.SqlIcon, TAGS.NetIcon],
   },
   {
-    titlekey: "title4",
-    descriptionkey: "description4",
+    titleKey: "title4",
+    title: "Pasta Studio — Pre-Launch Landing Page",
+    descriptionKey: "description4",
+    description:
+      "Landing page for the opening of Pasta Studio®, a contemporary Italian restaurant in Córdoba, Argentina. Built with Vite and Vanilla JS, featuring a real-time countdown, scroll-snap navigation, Google Maps integration and brand-aligned design. Deployed on Netlify, optimized for mobile QR code access.",
     github: "https://github.com/PJMonticoli/pasta-studio",
     image: "/pastastudio.webp",
-    tags: [TAGS.JAVASCRIPT,TAGS.HTML, TAGS.CSS],
+    tags: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
   },
   {
-    titlekey: "title5",
-    descriptionkey: "description5",
+    titleKey: "title5",
+    title: "Hotaka iKhodi Bootcamp Project",
+    descriptionKey: "description5",
+    description:
+      "Dockwitcher is a web-based logistics platform streamlining transportation and loading operations for industrial sectors. The solution centralizes fleet and dock management, offers real-time tracking, and provides proactive notifications, enhancing logistics efficiency and security.",
     github: "https://github.com/PJMonticoli/dockwitcher-app.git",
     image: "/dockwitcher.webp",
     tags: [TAGS.VUE, TAGS.SPRING, TAGS.JAVA, TAGS.MongoDB],
@@ -136,7 +151,7 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-20">
   {
-    PROJECTS.map(({ image, titlekey, descriptionkey, tags, github }) => (
+    PROJECTS.map(({ image, titleKey, title, descriptionKey, description, tags, github }) => (
       <article class="flex flex-col space-x-0 space-y-6 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl border border-white/10 md:group-hover:-translate-y-1 md:group-hover:shadow-2xl md:group-hover:border-white/20">
@@ -150,8 +165,8 @@ const PROJECTS = [
         </div>
 
         <div class="flex flex-col w-full gap-3 md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-white" aria-label={titlekey}>
-            {titlekey}
+          <h3 class="text-2xl font-bold text-white" data-i18n={titleKey}>
+            {title}
           </h3>
 
           <ul class="flex flex-row flex-wrap gap-2">
@@ -167,14 +182,14 @@ const PROJECTS = [
             ))}
           </ul>
 
-          <div class="text-white/70 leading-relaxed" aria-label={descriptionkey}>
-            {descriptionkey}
+          <div class="text-white/70 leading-relaxed" data-i18n={descriptionKey}>
+            {description}
           </div>
           <footer class="flex items-end justify-start mt-2 gap-x-4">
             {github && (
               <LinkButton href={github}>
                 <GitHub class="size-6" />
-                <span aria-label="buttonText">Code</span>
+                <span data-i18n="buttonText">Code</span>
               </LinkButton>
             )}
           </footer>
@@ -183,50 +198,3 @@ const PROJECTS = [
     ))
   }
 </div>
-
-<script>
-  interface Translations {
-    [key: string]: string;
-  }
-
-  const translations: { [key: string]: Promise<Translations> } = {
-    en: fetch("/locales/en/translation.json").then((response) =>
-      response.json(),
-    ),
-    es: fetch("/locales/es/translation.json").then((response) =>
-      response.json(),
-    ),
-  };
-
-  function loadLanguage(lang: string) {
-    translations[lang].then((trans) => {
-      document.querySelectorAll("[aria-label]").forEach((el) => {
-        const key = el.getAttribute("aria-label");
-        if (key && trans[key]) {
-          el.textContent = trans[key];
-        }
-      });
-    });
-  }
-
-  let language = "en";
-
-  function handleLanguageChange(event: Event) {
-    const target = event.target as HTMLInputElement;
-    language = target.checked ? "es" : "en";
-    localStorage.setItem("language", language);
-    loadLanguage(language);
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("language") || "en";
-    const switchElement = document.getElementById(
-      "languageSwitch",
-    ) as HTMLInputElement;
-    if (switchElement) {
-      switchElement.checked = savedLang === "es";
-      loadLanguage(savedLang);
-    }
-    switchElement?.addEventListener("change", handleLanguageChange);
-  });
-</script>

@@ -1,6 +1,6 @@
 {
   "personalImageAlt": "Pablo Monticoli",
-  "openToWorkBadge": "Trabajando en Hotaka iKhodi",
+  "openToWorkBadge": "Trabajando en Allata",
   "helloMessage": "Hola, soy Pablo",
   "experienceMessage": "Desarrollador Full Stack con más de 3 años de experiencia en ",
   "roleDescription": "soluciones impulsadas por inteligencia artificial.",
@@ -35,18 +35,18 @@
   "date1": "Mayo 2025 - Presente",
   "exdescription1": "Lead Consultant en AI & Technology en Allata desde abril de 2026, diseñando soluciones full-stack potenciadas por IA con Vue.js, Angular, Node.js, Python y Django. Me especializo en Agentic AI, pipelines RAG y automatización (LangChain, LangGraph, n8n), además de mentorear desarrolladores y definir estrategia de entrega. Previamente, como Senior Consultant (mayo 2025 – febrero 2026), desarrollé soluciones cloud para clientes enterprise en Estados Unidos.",
 
-  "date2": " Octubre 2024 - Mayo 2025",
+  "date2": "Octubre 2024 - Mayo 2025",
   "exdescription2": "Desarrollador de Software y Analista de Datos liderando desarrollo en Python/Django y Vue.js junto con arquitectura de datos en MongoDB. Enfocado en optimización ETL, gestión de datos en la nube y dashboards en Power BI. Experiencia en sistemas ERP, incluyendo módulos personalizados en Odoo y soporte técnico.",
 
-  "date3": " Agosto 2023 - Octubre 2024",
+  "date3": "Agosto 2023 - Octubre 2024",
   "exdescription3": "Más de un año en el área de Sistemas trabajando con .NET, C#, SQL/NoSQL, Angular y Python — desarrollo de aplicaciones, gestión de bases de datos, optimización de procesos y resolución de problemas técnicos.",
 
   "date4": "Julio 2024 - Octubre 2024",
   "exdescription4": "Capacitación en acceso, filtrado y visualización de datos para la toma de decisiones, creando dashboards e informes claros con Qlik Sense, Power BI y SQL.",
 
-  "date5": "  Abril 2024 - Agosto 2024",
+  "date5": "Abril 2024 - Agosto 2024",
   "exdescription5": "Bootcamp de arquitecturas de software avanzadas: SOA, DDD, CQRS, SOLID, IoC, event sourcing, TDD/BDD y CI, trabajando con Spring Boot, Java, Kotlin y Vue.js.",
 
-  "date6": " Febrero 2023 - Agosto 2023",
+  "date6": "Febrero 2023 - Agosto 2023",
   "exdescription6": "Plataforma de e-commerce para una chocolatería con diseño responsivo, filtrado de productos, búsqueda avanzada y recomendaciones personalizadas. Checkout optimizado con múltiples opciones de pago para una compra más fluida."
 }
