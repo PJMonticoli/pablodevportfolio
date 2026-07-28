@@ -20,77 +20,77 @@ import JavaScriptIcon from "../icons/JavaScript.astro";
 const TAGS = {
   ANGULAR: {
     name: "Angular",
-    class: "bg-black text-white",
+    class: "bg-[#DD0031]/15 text-[#FF6B7A] ring-1 ring-[#DD0031]/30",
     icon: AngularIcon,
   },
   SUPABASE: {
     name: "Supabase",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#3ECF8E]/15 text-[#3ECF8E] ring-1 ring-[#3ECF8E]/30",
     icon: SupabaseIcon,
   },
   MYSQL: {
     name: "MySQL",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#00758F]/15 text-[#4FC3D9] ring-1 ring-[#00758F]/30",
     icon: MysqlIcon,
   },
   BOOTSTRAP: {
     name: "Bootstrap",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#7952B3]/15 text-[#B79EE8] ring-1 ring-[#7952B3]/30",
     icon: BootstrapIcon,
   },
   CSS: {
     name: "CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#1572B6]/15 text-[#5CACEE] ring-1 ring-[#1572B6]/30",
     icon: CssIcon,
   },
   HTML: {
     name: "HTML",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#E34F26]/15 text-[#FF8B6B] ring-1 ring-[#E34F26]/30",
     icon: HtmlIcon,
   },
   TYPESCRIPT: {
     name: "TypeScript",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#3178C6]/15 text-[#7EB6F6] ring-1 ring-[#3178C6]/30",
     icon: TypeScriptIcon,
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-[#323330] text-[#F7DF1E]",
+    class: "bg-[#F7DF1E]/15 text-[#F7DF1E] ring-1 ring-[#F7DF1E]/30",
     icon: JavaScriptIcon,
   },
   JAVA: {
     name: "Java",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#5382A1]/15 text-[#8FB8D6] ring-1 ring-[#5382A1]/30",
     icon: JavaIcon,
   },
   SPRING: {
     name: "Spring",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#6DB33F]/15 text-[#8FDB63] ring-1 ring-[#6DB33F]/30",
     icon: SpringIcon,
   },
   VUE: {
     name: "Vue",
-    class: "bg-black text-white",
+    class: "bg-[#42B883]/15 text-[#5FE0A8] ring-1 ring-[#42B883]/30",
     icon: VueIcon,
   },
   MongoDB: {
     name: "MongoDB",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#47A248]/15 text-[#6FC96F] ring-1 ring-[#47A248]/30",
     icon: MongoIcon,
   },
   NodeJs: {
     name: "NodeJs",
-    class: "bg-black text-white",
+    class: "bg-[#3C873A]/15 text-[#6FC96F] ring-1 ring-[#3C873A]/30",
     icon: NodeIcon,
   },
   SqlIcon: {
     name: "Sql",
-    class: "bg-[#003159] text-white",
+    class: "bg-white/10 text-white/80 ring-1 ring-white/20",
     icon: SqlIcon,
   },
   NetIcon: {
     name: "Net",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#512BD4]/15 text-[#9C87F0] ring-1 ring-[#512BD4]/30",
     icon: NetIcon,
   },
 };
@@ -134,12 +134,12 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex flex-col gap-y-16 mx-4">
+<div class="flex flex-col gap-y-20">
   {
     PROJECTS.map(({ image, titlekey, descriptionkey, tags, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+      <article class="flex flex-col space-x-0 space-y-6 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl border border-white/10 md:group-hover:-translate-y-1 md:group-hover:shadow-2xl md:group-hover:border-white/20">
             <img
               alt="Project Image"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
@@ -149,42 +149,35 @@ const PROJECTS = [
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3
-            class="text-2xl font-bold text-white dark:text-gray-100"
-            aria-label={titlekey}
-          >
+        <div class="flex flex-col w-full gap-3 md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-white" aria-label={titlekey}>
             {titlekey}
           </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
 
-            <div
-              class="mt-2 text-white dark:text-gray-400"
-              aria-label={descriptionkey}
-            >
-              {descriptionkey}
-            </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  <span aria-label="buttonText">Code</span>
-                </LinkButton>
-              )}
-            </footer>
+          <ul class="flex flex-row flex-wrap gap-2">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex items-center gap-x-1.5 rounded-full text-xs font-medium ${tag.class} py-1 px-2.5`}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="text-white/70 leading-relaxed" aria-label={descriptionkey}>
+            {descriptionkey}
           </div>
+          <footer class="flex items-end justify-start mt-2 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-6" />
+                <span aria-label="buttonText">Code</span>
+              </LinkButton>
+            )}
+          </footer>
         </div>
       </article>
     ))

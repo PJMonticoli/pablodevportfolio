@@ -1,6 +1,4 @@
 ---
-import ThemeToggle from "../components/ThemeToggle.astro";
-
 const navItems = [
   { key: "navExperience", url: "/#experience" },
   { key: "navProject", url: "/#projects" },
@@ -8,15 +6,15 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-3">
   <nav
     id="main-nav"
-    class="flex px-3 text-sm font-medium rounded-full text-gray-300 justify-center items-center mr-20 transition-all duration-300"
+    class="flex px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium tracking-tight rounded-full text-white/70 justify-center items-center transition-all duration-300 ease-out"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-3 py-2 transition-colors hover:text-yellow-400"
+          class="relative block px-2 sm:px-3 py-2 whitespace-nowrap transition-colors hover:text-yellow-400"
           aria-label={link.key}
           href={link.url}
         >
@@ -24,11 +22,8 @@ const navItems = [
         </a>
       ))
     }
-    <ThemeToggle />
-  </nav>
-
-  <nav class="fixed top-0 right-0 z-10 flex items-center mt-4 mr-3">
-    <div class="checkbox-wrapper-35">
+    <span class="w-px h-4 bg-white/15 mx-0.5 sm:mx-1" aria-hidden="true"></span>
+    <div class="checkbox-wrapper-35 flex items-center px-0.5 sm:px-1 scale-90 sm:scale-100">
       <input type="checkbox" id="languageSwitch" class="switch" />
       <label for="languageSwitch">
         <span class="switch-x-text"></span>
@@ -83,8 +78,9 @@ const navItems = [
       if (window.scrollY > 50) {
         nav?.classList.add(
           "shadow-lg",
+          "shadow-black/20",
           "backdrop-blur-md",
-          "bg-white/5",
+          "bg-white/[0.06]",
           "ring-1",
           "ring-white/10",
           "px-4"
@@ -92,14 +88,15 @@ const navItems = [
       } else {
         nav?.classList.remove(
           "shadow-lg",
+          "shadow-black/20",
           "backdrop-blur-md",
-          "bg-white/5",
+          "bg-white/[0.06]",
           "ring-1",
           "ring-white/10",
           "px-4"
         );
       }
-    });
+    }, { passive: true });
   });
 </script>
 

@@ -30,9 +30,9 @@ const heroItems = [
 ---
 
 <div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
+  <div class="flex items-center gap-4 mb-6">
     <img
-      class="rounded-full shadow-lg size-16"
+      class="rounded-full shadow-lg size-16 ring-2 ring-white/10"
       src="/avatar.webp"
       alt={personalImageAlt}
     />
@@ -46,13 +46,13 @@ const heroItems = [
     </a>
   </div>
   <h1
-    class="text-4xl font-bold tracking-tight text-gray-400 sm:text-5xl dark:text-white"
+    class="text-4xl font-bold tracking-tight text-white sm:text-5xl"
     aria-label="helloMessage"
   >
     {heroItems.find((item) => item.key === "helloMessage")?.key}
   </h1>
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold text-white dark:text-gray-400"
+    class="mt-6 text-xl leading-relaxed text-white/70 [&>strong]:text-yellow-300 [&>strong]:font-semibold"
   >
     <span aria-label="experienceMessage">
       {heroItems.find((item) => item.key === "experienceMessage")?.key}
