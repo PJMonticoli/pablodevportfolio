@@ -9,7 +9,7 @@ import Upload from "../icons/Upload.astro";
 ---
 
 <div class="max-w-xl">
-  <div class="flex items-center gap-4 mb-6">
+  <div class="flex items-center gap-4 mb-6" data-reveal>
     <img
       class="rounded-full shadow-lg size-16 ring-2 ring-white/10"
       src="/avatar.webp"
@@ -27,13 +27,15 @@ import Upload from "../icons/Upload.astro";
     </a>
   </div>
   <h1
-    class="text-4xl font-bold tracking-tight text-white sm:text-5xl"
+    class="text-5xl font-bold tracking-tight text-white sm:text-6xl"
     data-i18n="helloMessage"
+    data-reveal
   >
     Hey, I'm Pablo
   </h1>
   <p
     class="mt-6 text-xl leading-relaxed text-white/70 [&>strong]:text-yellow-300 [&>strong]:font-semibold"
+    data-reveal
   >
     <span data-i18n="experienceMessage">
       Full Stack Developer with 3+ years of experience in
@@ -43,7 +45,7 @@ import Upload from "../icons/Upload.astro";
     </strong>
     <span data-i18n="fromLocation">Based in Córdoba, Argentina.</span>
     <img
-      src="https://flagcdn.com/ar.svg"
+      src="/flags/ar.svg"
       alt="Argentina"
       width="20"
       height="15"
@@ -55,7 +57,7 @@ import Upload from "../icons/Upload.astro";
     </span>
   </p>
 
-  <nav class="flex flex-wrap gap-4 mt-8">
+  <nav class="flex flex-wrap gap-4 mt-8" data-reveal>
     <SocialMedia href="https://github.com/PJMonticoli">
       <GitHub class="size-4" />
       GitHub

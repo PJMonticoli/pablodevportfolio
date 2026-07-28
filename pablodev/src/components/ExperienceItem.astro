@@ -16,12 +16,12 @@ const { title, company, description, descriptionKey, link, date, dateKey } =
 ---
 
 <div
-  class="relative mx-8 md:mx-12 pb-12 grid before:absolute before:left-[-27px] md:before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4"
+  class="group relative mx-8 md:mx-12 pb-12 grid before:absolute before:left-[-27px] md:before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4"
 >
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
       <span
-        class="text-yellow-400 -left-[34px] md:-left-[42px] absolute rounded-full text-5xl"
+        class="text-yellow-400 -left-[34px] md:-left-[42px] absolute rounded-full text-5xl transition-[transform,text-shadow] duration-200 ease-out motion-reduce:transition-none md:group-hover:scale-125 md:group-hover:[text-shadow:0_0_16px_rgba(250,204,21,0.6)]"
         >&bull;</span
       >
 
@@ -43,7 +43,7 @@ const { title, company, description, descriptionKey, link, date, dateKey } =
     {
       link && (
         <LinkedinLine href={link}>
-          <span aria-label="knowMore">Read More</span>{" "}
+          <span data-i18n="knowMore">Read More</span>{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 icon icon-tabler icon-tabler-chevron-right"

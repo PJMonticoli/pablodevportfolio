@@ -28,8 +28,13 @@ import Hero from "../components/Hero.astro";
   </main>
   <SectionContainer id="experience" class="pb-20">
     <h2
-      class="flex items-center mb-8 text-3xl font-semibold gap-x-3 text-white"
+      class="relative flex items-center mb-8 text-3xl font-semibold gap-x-3 text-white"
     >
+      <div
+        class="pointer-events-none absolute -left-6 -top-10 -z-10 h-32 w-32 rounded-full bg-yellow-400/10 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
       <BriefCaseIcon class="size-8 text-yellow-400" />
       <span data-i18n="experienceTitle">Professional Experience & Training</span>
     </h2>
@@ -37,8 +42,13 @@ import Hero from "../components/Hero.astro";
   </SectionContainer>
   <SectionContainer id="projects" class="pb-24">
     <h2
-      class="flex items-center mb-8 text-3xl font-semibold gap-x-3 text-white"
+      class="relative flex items-center mb-8 text-3xl font-semibold gap-x-3 text-white"
     >
+      <div
+        class="pointer-events-none absolute -left-6 -top-10 -z-10 h-32 w-32 rounded-full bg-yellow-400/10 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
       <ProjectsIcon class="size-8 text-yellow-400" />
       <span data-i18n="projectTitle">Projects</span>
     </h2>

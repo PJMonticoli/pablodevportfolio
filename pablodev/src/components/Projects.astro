@@ -152,15 +152,20 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-20">
   {
     PROJECTS.map(({ image, titleKey, title, descriptionKey, description, tags, github }, index) => (
-      <article class={`flex flex-col gap-6 group md:gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+      <article class={`flex flex-col gap-6 group md:gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`} data-reveal>
         <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl border border-white/10 md:group-hover:-translate-y-1 md:group-hover:shadow-2xl md:group-hover:border-white/20">
+          <div class="spotlight-card relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition-[transform,box-shadow,border-color] duration-300 ease-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl border border-white/10 md:group-hover:-translate-y-1 md:group-hover:shadow-2xl md:group-hover:border-white/20">
             <img
               alt="Project Image"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
               loading="lazy"
               src={image}
             />
+            <div
+              class="spotlight-overlay pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 md:group-hover:opacity-100"
+              aria-hidden="true"
+            >
+            </div>
           </div>
         </div>
 

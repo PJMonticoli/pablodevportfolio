@@ -30,9 +30,10 @@ const { title } = Astro.props;
       style="background:
         radial-gradient(ellipse 120% 60% at 85% 0%, rgba(250, 204, 21, 0.14) 0%, transparent 60%),
         radial-gradient(ellipse 90% 55% at 5% 100%, rgba(217, 119, 6, 0.10) 0%, transparent 55%),
-        #07070f;"
+        linear-gradient(180deg, #07070f 0%, #0a0a13 55%, #0c0c17 100%);"
     >
     </div>
+    <div class="grain-overlay fixed inset-0 -z-10 h-full w-full" aria-hidden="true"></div>
 
     <div id="scroll-sentinel" class="absolute top-0 h-px w-full" aria-hidden="true"></div>
     <Header />
@@ -40,10 +41,15 @@ const { title } = Astro.props;
     <Footer />
     <script>
       import "../scripts/i18n";
+      import "../scripts/reveal";
+      import "../scripts/spotlight";
+      import "../scripts/active-nav";
     </script>
     <style is:global>
       :root {
         color-scheme: dark;
+        --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+        --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
       }
 
       html {
@@ -62,6 +68,50 @@ const { title } = Astro.props;
       ::selection {
         background: rgba(250, 204, 21, 0.3);
         color: #fff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        border: 2px solid #07070f;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(250, 204, 21, 0.3);
+      }
+      html {
+        scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+      }
+
+      [data-reveal].reveal-hidden {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      [data-reveal] {
+        transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out);
+      }
+      [data-reveal].reveal-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .grain-overlay {
+        opacity: 0.035;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      .spotlight-overlay {
+        background: radial-gradient(
+          280px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+          rgba(250, 204, 21, 0.16),
+          transparent 70%
+        );
       }
 
       @media (prefers-reduced-motion: reduce) {
