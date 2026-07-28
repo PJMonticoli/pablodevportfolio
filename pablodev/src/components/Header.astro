@@ -32,8 +32,12 @@ const navItems = [
       <label for="languageSwitch">
         <span class="switch-x-text"></span>
         <span class="switch-x-toggletext">
-          <span class="switch-x-unchecked">🇬🇧</span>
-          <span class="switch-x-checked">🇪🇸</span>
+          <span class="switch-x-unchecked">
+            <img src="https://flagcdn.com/w20/gb.svg" alt="English" width="20" height="15" />
+          </span>
+          <span class="switch-x-checked">
+            <img src="https://flagcdn.com/w20/es.svg" alt="Español" width="20" height="15" />
+          </span>
         </span>
       </label>
     </div>
@@ -129,6 +133,15 @@ const navItems = [
     position: absolute;
     top: 0;
     transition: opacity 0.125s ease-out, transform 0.125s ease-out;
+  }
+
+  .checkbox-wrapper-35 .switch + label .switch-x-unchecked img,
+  .checkbox-wrapper-35 .switch + label .switch-x-checked img {
+    display: block;
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
+    object-fit: cover;
   }
 
   .checkbox-wrapper-35 .switch + label .switch-x-unchecked {
