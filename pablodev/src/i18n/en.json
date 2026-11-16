@@ -10,7 +10,10 @@
     "workflow": "AI workflow",
     "experience": "Experience",
     "projects": "Projects",
+    "stack": "Stack",
+    "certifications": "Certifications",
     "contact": "Contact",
+    "menu": "Menu",
     "language": "Language"
   },
   "hero": {
@@ -160,6 +163,7 @@
   "certs": {
     "title": "Certifications & education",
     "verify": "Verify",
+    "more": "More courses and certifications on LinkedIn",
     "groups": [
       {
         "issuer": "Anthropic",

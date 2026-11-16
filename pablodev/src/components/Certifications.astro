@@ -2,7 +2,7 @@
 import LinkedinLine from "./LinkedinLine.astro";
 import ArrowUpRight from "../icons/ArrowUpRight.astro";
 import { getDict, type Lang } from "../i18n";
-import { CERT_LINKS } from "../data/links";
+import { CERT_LINKS, LINKS } from "../data/links";
 
 interface Props {
   lang: Lang;
@@ -39,6 +39,13 @@ const t = getDict(Astro.props.lang).certs;
     ))
   }
 </div>
+
+<p class="mt-6" data-reveal>
+  <LinkedinLine href={LINKS.linkedinCerts}>
+    {t.more}
+    <ArrowUpRight class="size-4 shrink-0" />
+  </LinkedinLine>
+</p>
 
 <h3 class="mt-14 border-b border-white/15 pb-2 text-xl font-bold text-yellow-400" data-reveal>
   {t.educationTitle}

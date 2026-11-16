@@ -6,6 +6,8 @@ export const LINKS = {
   github: "https://github.com/PJMonticoli",
   linkedin:
     "https://www.linkedin.com/in/pablo-javier-mont%C3%ADcoli-b69733248/",
+  linkedinCerts:
+    "https://www.linkedin.com/in/pablo-javier-mont%C3%ADcoli-b69733248/details/certifications/",
   email: "mailto:pablomonticoli@hotmail.com",
 };
 

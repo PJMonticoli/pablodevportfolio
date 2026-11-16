@@ -10,7 +10,10 @@
     "workflow": "Flujo con AI",
     "experience": "Experiencia",
     "projects": "Proyectos",
+    "stack": "Stack",
+    "certifications": "Certificaciones",
     "contact": "Contacto",
+    "menu": "Menú",
     "language": "Idioma"
   },
   "hero": {
@@ -160,6 +163,7 @@
   "certs": {
     "title": "Certificaciones y educación",
     "verify": "Verificar",
+    "more": "Más cursos y certificaciones en LinkedIn",
     "groups": [
       {
         "issuer": "Anthropic",
