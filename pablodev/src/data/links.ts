@@ -1,7 +1,5 @@
 import type { Lang } from "../i18n";
 
-export const SITE_URL = "https://pablodevportfolio.netlify.app";
-
 export const LINKS = {
   github: "https://github.com/PJMonticoli",
   linkedin:

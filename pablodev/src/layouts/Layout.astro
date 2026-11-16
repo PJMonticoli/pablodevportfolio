@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "@fontsource-variable/onest";
 import { getDict, homePath, LANGS, type Lang } from "../i18n";
-import { LINKS, SITE_URL } from "../data/links";
+import { LINKS } from "../data/links";
 
 interface Props {
   lang: Lang;
@@ -11,7 +11,8 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = getDict(lang);
-const site = Astro.site ?? new URL(SITE_URL);
+const site = Astro.site;
+if (!site) throw new Error("Set `site` in astro.config.mjs");
 const pageUrl = (l: Lang) => new URL(homePath(l), site).href;
 const ogImage = new URL("/og-image.png", site).href;
 const ogLocale: Record<Lang, string> = { en: "en_US", es: "es_AR" };
