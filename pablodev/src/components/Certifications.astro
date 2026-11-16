@@ -1,0 +1,77 @@
+---
+import LinkedinLine from "./LinkedinLine.astro";
+import ArrowUpRight from "../icons/ArrowUpRight.astro";
+import { getDict, type Lang } from "../i18n";
+import { CERT_LINKS } from "../data/links";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = getDict(Astro.props.lang).certs;
+---
+
+<div class="grid gap-10 md:grid-cols-2">
+  {
+    t.groups.map((group) => (
+      <div data-reveal>
+        <h3 class="flex items-baseline justify-between gap-4 border-b border-white/15 pb-2">
+          <span class="text-xl font-bold text-yellow-400">{group.issuer}</span>
+          <span class="text-sm font-normal text-white/60">{group.date}</span>
+        </h3>
+        <ul>
+          {group.items.map((item) => (
+            <li class="flex items-center justify-between gap-4 border-b border-white/10 py-3">
+              <span class="text-white/80">{item.name}</span>
+              {CERT_LINKS[item.id] && (
+                <LinkedinLine
+                  href={CERT_LINKS[item.id]}
+                  label={`${t.verify}: ${item.name}`}
+                >
+                  <span class="text-sm">{t.verify}</span>
+                  <ArrowUpRight class="size-4" />
+                </LinkedinLine>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
+
+<h3 class="mt-14 border-b border-white/15 pb-2 text-xl font-bold text-yellow-400" data-reveal>
+  {t.educationTitle}
+</h3>
+<ul>
+  {
+    t.education.map((item) => (
+      <li
+        class="grid gap-1 border-b border-white/10 py-4 md:grid-cols-[1fr_auto] md:gap-8"
+        data-reveal
+      >
+        <div>
+          <p class="font-semibold text-white">{item.name}</p>
+          <p class="text-white/70">
+            {item.place}
+            {item.detail && <span class="text-white/60"> · {item.detail}</span>}
+          </p>
+          {CERT_LINKS[item.id] && (
+            <div class="mt-1">
+              <LinkedinLine
+                href={CERT_LINKS[item.id]}
+                label={`${t.verify}: ${item.name}`}
+              >
+                <span class="text-sm">{t.verify}</span>
+                <ArrowUpRight class="size-4" />
+              </LinkedinLine>
+            </div>
+          )}
+        </div>
+        <p class="text-sm text-white/60 md:text-right whitespace-nowrap">
+          {item.date}
+        </p>
+      </li>
+    ))
+  }
+</ul>

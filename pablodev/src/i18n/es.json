@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "title": "Pablo Monticoli | Lead Consultant, AI & Technology en Allata",
+    "description": "Lead Consultant en AI & Technology en Allata. Desarrollador de software para clientes de Estados Unidos, que trabaja todos los días con agentes de AI. Experiencia, proyectos y certificaciones.",
+    "ogAlt": "Pablo Monticoli, Lead Consultant en AI & Technology en Allata"
+  },
+  "nav": {
+    "label": "Principal",
+    "skip": "Saltar al contenido",
+    "workflow": "Flujo con AI",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "hero": {
+    "avatarAlt": "Retrato de Pablo Monticoli",
+    "status": "Lead Consultant, AI & Technology",
+    "greeting": "Hola, soy Pablo",
+    "lead": "Soy desarrollador de software con más de 3 años en software empresarial, hoy para clientes de Estados Unidos en Allata. Trabajo todos los días con <strong>agentes de AI</strong> y me estoy formando en AI agéntica y MCP.",
+    "location": "Vivo en Córdoba, Argentina",
+    "cv": "CV",
+    "cvLabel": "Abrir mi CV (PDF, español)",
+    "contact": "Contactame"
+  },
+  "workflow": {
+    "title": "Cómo trabajo con AI",
+    "intro": "En el trabajo con clientes desarrollo con Claude Code. Alrededor armé un sistema para que cada sesión arranque con lo que necesita y respete las reglas del proyecto.",
+    "items": [
+      {
+        "title": "Contexto por proyecto",
+        "text": "Cada proyecto tiene su base de conocimiento, escrita como una wiki que el agente lee (el patrón LLM Wiki). La sesión arranca con el contexto del proyecto y el tablero de tareas cargados, así no explico el código de nuevo cada vez."
+      },
+      {
+        "title": "Hooks como guardrails",
+        "text": "Los hooks son scripts que corren en puntos fijos de la sesión. Las reglas que se tienen que cumplir siempre corren ahí como código, así no dependen de que el modelo recuerde una instrucción."
+      },
+      {
+        "title": "Skills y plugins",
+        "text": "El trabajo que repito se convierte en una skill: leer una tarea, revisar un pull request, documentar un cambio, cerrar una tarea. Escribo los pasos y los controles una vez y los reutilizo."
+      },
+      {
+        "title": "Ajuste continuo",
+        "text": "Voy ajustando qué se carga, cuándo y cuánto. El objetivo es mejores resultados con menos tokens."
+      }
+    ],
+    "note": "Este es el sistema que uso con clientes. RAG, LangChain, LangGraph y n8n son, por ahora, formación y proyectos personales."
+  },
+  "experience": {
+    "title": "Experiencia",
+    "site": "Sitio de la empresa",
+    "items": [
+      {
+        "id": "allata-lead",
+        "role": "Lead Consultant, AI & Technology",
+        "company": "Allata",
+        "date": "Abr 2026 - actualidad",
+        "place": "Estados Unidos / Remoto",
+        "text": "Desarrollo de software empresarial para un cliente de Estados Unidos, con contacto diario para estimaciones, decisiones técnicas y revisión de código. También armé el flujo de trabajo con AI que uso en el proyecto: Claude Code con una base de conocimiento por proyecto, hooks, skills y plugins propios."
+      },
+      {
+        "id": "allata-senior",
+        "role": "Senior Consultant, AI & Technology",
+        "company": "Allata",
+        "date": "May 2025 - abr 2026",
+        "place": "Estados Unidos / Remoto",
+        "text": "Desarrollé funcionalidades full stack para clientes de Estados Unidos dentro de arquitecturas existentes, usando AI en todo el proceso de desarrollo. Detecté riesgos a tiempo y mantuve una comunicación clara con el equipo y con el cliente."
+      },
+      {
+        "id": "hotaka",
+        "role": "Desarrollador de software",
+        "company": "Hotaka iKhodi",
+        "date": "Oct 2024 - may 2025",
+        "place": "Barcelona / Remoto",
+        "text": "Desarrollé servicios backend con Python/Django, Java/Spring Boot, Kotlin y .NET, y frontends en Vue.js, con MongoDB como base de datos principal. También desarrollé módulos a medida para Odoo y colaboré en procesos ETL y reportes en Power BI."
+      },
+      {
+        "id": "guma",
+        "role": "Desarrollador full stack (pasantía)",
+        "company": "José Guma S.A.",
+        "date": "Ago 2023 - oct 2024",
+        "place": "Colonia Caroya, Córdoba",
+        "text": "Desarrollé aplicaciones empresariales con C#/.NET y Angular, y administré bases de datos PostgreSQL y SQL Server. Combiné mi formación contable y administrativa con análisis de datos para detectar e implementar mejoras en varios sistemas internos."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "code": "Código",
+    "frontend": "Front end",
+    "api": "API",
+    "items": {
+      "wallstreetpro": {
+        "title": "WallStreetPro",
+        "text": "Un sistema de análisis para swing trading que corre sobre Claude Code. Una vez por semana lee datos de TradingView por un servidor MCP, revisa un conjunto corto de reglas y responde BUY o NO BUY con entrada, stop y fecha de salida. Nunca ejecuta una orden.",
+        "text2": "Probé las reglas con un backtest de 5.533 operaciones simuladas sobre 446 tickers, de 2015 a 2026. No tenían ventaja sobre el mercado, así que reduje los controles de 10 a 5 y dejé lo que los datos respaldaban.",
+        "tableCaption": "Condiciones de aprobación, escritas antes de correrlo",
+        "colCondition": "Condición",
+        "colNeeded": "Pedía",
+        "colMeasured": "Midió",
+        "rows": [
+          { "name": "Esperanza neta de costos", "needed": "> +0,15R", "measured": "-0,096R" },
+          { "name": "t de Student", "needed": "> 2", "measured": "-4,47" },
+          { "name": "Alfa contra SPY", "needed": "> +0,10R", "measured": "-0,139R" },
+          { "name": "Años con esperanza positiva", "needed": "8 de 12", "measured": "3 de 12" }
+        ],
+        "tableNote": "Resultado: 0 de 4. La versión 5 se quedó con 5 de las 10 reglas."
+      },
+      "dockwitcher": {
+        "title": "Dockwitcher",
+        "text": "Plataforma de logística para transporte y muelles de carga, desarrollada en el Bootcamp Full Stack de Hotaka iKhodi. Reúne la gestión de flota y de muelles en un solo lugar, con seguimiento en tiempo real y notificaciones.",
+        "alt": "Pantalla de Dockwitcher con la lista de recepciones y su estado"
+      },
+      "chocolate": {
+        "title": "E-commerce para una chocolatería",
+        "text": "Proyecto freelance de 2023. Una tienda online para una chocolatería: los clientes recorren el catálogo y compran, los socios tienen beneficios y los dueños gestionan stock, promociones y reportes de ventas. Front end en Angular y una API en Node.js y Express sobre MySQL.",
+        "alt": "Página de inicio de la tienda de la chocolatería"
+      },
+      "pallets": {
+        "title": "Sistema de gestión de pallets",
+        "text": "Aplicación .NET para logística de pallets. Registra los movimientos y el estado de los pallets, los transportistas y clientes involucrados, y genera reportes de inventario.",
+        "alt": "Panel de control del sistema de pallets, con gráficos de movimientos del mes"
+      },
+      "pasta": {
+        "title": "Pasta Studio, landing de lanzamiento",
+        "text": "Landing que diseñé y desarrollé para la apertura de Pasta Studio en abril de 2026, un restaurante italiano en Córdoba, Argentina. Vite y JavaScript sin frameworks, con cuenta regresiva en vivo, navegación con scroll-snap y Google Maps, pensada para abrirse desde un QR en el celular. El repo tiene mi versión; después los dueños cambiaron el sitio.",
+        "alt": "Landing de Pasta Studio con la cuenta regresiva a la apertura"
+      }
+    }
+  },
+  "stack": {
+    "title": "Stack técnico",
+    "groups": [
+      {
+        "name": "AI en el trabajo",
+        "items": ["Claude Code", "Context engineering", "Bases de conocimiento LLM Wiki", "Hooks", "Skills y plugins"]
+      },
+      {
+        "name": "AI en formación y proyectos personales",
+        "items": ["MCP", "LangChain", "LangGraph", "RAG", "Bases de datos vectoriales", "n8n", "Flowise", "APIs de LLM"]
+      },
+      {
+        "name": "Backend",
+        "items": ["Python", "Django", "C#/.NET", "Java", "Spring Boot", "Kotlin", "Node.js"]
+      },
+      {
+        "name": "Frontend",
+        "items": ["Angular", "Vue.js", "TypeScript", "JavaScript", "HTML", "CSS"]
+      },
+      {
+        "name": "Datos",
+        "items": ["PostgreSQL", "SQL Server", "MongoDB", "Supabase", "Power BI", "Qlik Sense", "Pandas", "ETL"]
+      },
+      {
+        "name": "Herramientas",
+        "items": ["Git", "Docker", "CI/CD", "Azure DevOps", "Scrum", "Odoo"]
+      }
+    ]
+  },
+  "certs": {
+    "title": "Certificaciones y educación",
+    "verify": "Verificar",
+    "groups": [
+      {
+        "issuer": "Anthropic",
+        "date": "2026",
+        "items": [
+          { "id": "claude-101", "name": "Claude 101" },
+          { "id": "mcp-intro", "name": "Introduction to Model Context Protocol" },
+          { "id": "mcp-advanced", "name": "Model Context Protocol: Advanced Topics" },
+          { "id": "agent-skills", "name": "Introduction to Agent Skills" },
+          { "id": "claude-cowork", "name": "Introduction to Claude Cowork" }
+        ]
+      },
+      {
+        "issuer": "Udemy",
+        "date": "2025 - 2026",
+        "items": [
+          { "id": "udemy-langgraph", "name": "LangChain: Agentic AI Engineering with LangChain & LangGraph" },
+          { "id": "udemy-rag-agents", "name": "RAG Agents: Build Apps & GPTs with APIs/MCP, LangChain & n8n" },
+          { "id": "udemy-n8n", "name": "AI Automation: Build LLM Apps & AI-Agents with n8n & APIs" },
+          { "id": "udemy-azure-openai", "name": "Generative AI: Beginner to Pro with Azure OpenAI" },
+          { "id": "udemy-llms", "name": "LLMs Mastery: Complete Guide to Transformers & Generative AI" },
+          { "id": "udemy-vector-db", "name": "Vector Databases Fundamentals" }
+        ]
+      }
+    ],
+    "educationTitle": "Educación",
+    "education": [
+      {
+        "id": "utn",
+        "name": "Técnico Universitario en Programación",
+        "place": "UTN FRC",
+        "date": "2021 - 2023",
+        "detail": "Promedio 8,57/10"
+      },
+      {
+        "id": "hotaka-bootcamp",
+        "name": "Bootcamp Full Stack",
+        "place": "Hotaka iKhodi",
+        "date": "Jul - oct 2024",
+        "detail": "Spring Boot, Java, Kotlin, Vue.js, DDD, CQRS, TDD"
+      },
+      {
+        "id": "jupi-bootcamp",
+        "name": "Bootcamp de Análisis de Datos (150 hs)",
+        "place": "Jupi Digital",
+        "date": "Jul - nov 2024",
+        "detail": "Power BI, Qlik Sense, SQL"
+      },
+      {
+        "id": "unc",
+        "name": "Carrera de Contador Público (18 materias aprobadas)",
+        "place": "Universidad Nacional de Córdoba",
+        "date": "2018 - 2020",
+        "detail": ""
+      }
+    ]
+  },
+  "footer": {
+    "message": "Sitio desarrollado por Pablo Monticoli",
+    "navLabel": "Redes",
+    "email": "Email"
+  }
+}

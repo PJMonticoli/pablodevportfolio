@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "./SectionContainer.astro";
+import SectionHeading from "./SectionHeading.astro";
+import Hero from "./Hero.astro";
+import AiWorkflow from "./AiWorkflow.astro";
+import Experience from "./Experience.astro";
+import Projects from "./Projects.astro";
+import Stack from "./Stack.astro";
+import Certifications from "./Certifications.astro";
+import TerminalIcon from "../icons/Terminal.astro";
+import BriefCaseIcon from "../icons/BriefCase.astro";
+import ProjectsIcon from "../icons/Project.astro";
+import StackIcon from "../icons/Stack.astro";
+import CertificateIcon from "../icons/Certificate.astro";
+import { getDict, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getDict(lang);
+const iconClass = "size-8 shrink-0 text-yellow-400";
+---
+
+<Layout lang={lang}>
+  <SectionContainer class="pt-28 pb-16 md:pt-40 md:pb-28">
+    <Hero lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="workflow" class="pb-24">
+    <SectionHeading>
+      <TerminalIcon slot="icon" class={iconClass} />
+      {t.workflow.title}
+    </SectionHeading>
+    <AiWorkflow lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="experience" class="pb-16">
+    <SectionHeading>
+      <BriefCaseIcon slot="icon" class={iconClass} aria-hidden="true" />
+      {t.experience.title}
+    </SectionHeading>
+    <Experience lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="projects" class="pb-24">
+    <SectionHeading>
+      <ProjectsIcon slot="icon" class={iconClass} aria-hidden="true" />
+      {t.projects.title}
+    </SectionHeading>
+    <Projects lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="stack" class="pb-24">
+    <SectionHeading>
+      <StackIcon slot="icon" class={iconClass} />
+      {t.stack.title}
+    </SectionHeading>
+    <Stack lang={lang} />
+  </SectionContainer>
+
+  <SectionContainer id="certifications" class="pb-12">
+    <SectionHeading>
+      <CertificateIcon slot="icon" class={iconClass} />
+      {t.certs.title}
+    </SectionHeading>
+    <Certifications lang={lang} />
+  </SectionContainer>
+</Layout>

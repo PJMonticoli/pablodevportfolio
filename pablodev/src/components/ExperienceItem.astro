@@ -1,64 +1,50 @@
 ---
 import LinkedinLine from "./LinkedinLine.astro";
+import ArrowUpRight from "../icons/ArrowUpRight.astro";
 
 interface Props {
-  title: string;
+  id: string;
+  role: string;
   company: string;
-  description: string;
-  descriptionKey: string;
-  link?: string;
   date: string;
-  dateKey: string;
+  place: string;
+  text: string;
+  link?: string;
+  linkLabel: string;
 }
 
-const { title, company, description, descriptionKey, link, date, dateKey } =
-  Astro.props;
+const { role, company, date, place, text, link, linkLabel } = Astro.props;
 ---
 
 <div
-  class="group relative mx-8 md:mx-12 pb-12 grid before:absolute before:left-[-27px] md:before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4"
+  class="group relative mx-8 md:mx-12 pb-12 grid before:absolute before:left-[-27px] md:before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10"
 >
-  <div class="relative pb-12 md:col-span-2">
-    <div class="sticky top-0">
+  <div class="relative pb-4 md:pb-12 md:col-span-2">
+    <div class="sticky top-20">
       <span
-        class="text-yellow-400 -left-[34px] md:-left-[42px] absolute rounded-full text-5xl transition-[transform,text-shadow] duration-200 ease-out motion-reduce:transition-none md:group-hover:scale-125 md:group-hover:[text-shadow:0_0_16px_rgba(250,204,21,0.6)]"
-        >&bull;</span
+        class="text-yellow-400 -left-[34px] md:-left-[42px] absolute rounded-full text-5xl leading-none transition-[transform,text-shadow] duration-200 ease-out motion-reduce:transition-none md:group-hover:scale-125 md:group-hover:[text-shadow:0_0_16px_rgba(250,204,21,0.6)]"
+        aria-hidden="true">&bull;</span
       >
 
-      <h3 class="text-xl font-bold text-yellow-400 notranslate">
-        {title}
+      <h3 class="text-xl font-bold text-yellow-400 text-balance">
+        {role}
       </h3>
-      <h4 class="font-semibold text-xl text-white">
+      <p class="font-semibold text-xl text-white">
         {company}
-      </h4>
-      <time class="p-0 m-0 text-sm text-white/60" data-i18n={dateKey}>
-        {date}
-      </time>
+      </p>
+      <p class="mt-1 text-sm text-white/60">
+        <span>{date}</span>
+        <span class="block">{place}</span>
+      </p>
     </div>
   </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-white/70 md:col-span-3">
-    <div data-i18n={descriptionKey}>
-      {description}
-    </div>
+  <div class="relative flex flex-col gap-3 pb-4 text-white/70 md:col-span-3">
+    <p class="leading-relaxed">{text}</p>
     {
       link && (
-        <LinkedinLine href={link}>
-          <span data-i18n="knowMore">Read More</span>{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l6 6l-6 6" />
-          </svg>
+        <LinkedinLine href={link} label={`${linkLabel}: ${company}`}>
+          {linkLabel}
+          <ArrowUpRight class="size-4" />
         </LinkedinLine>
       )
     }

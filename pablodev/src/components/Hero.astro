@@ -1,83 +1,81 @@
 ---
-const personalImageAlt = "Pablo Monticoli";
-import Badge from "../components/Badge.astro";
+import { Image } from "astro:assets";
+import avatar from "../assets/avatar.webp";
+import Badge from "./Badge.astro";
+import SocialMedia from "./SocialMedia.astro";
 import LinkedInIcon from "../icons/Linkedin.astro";
 import MailIcon from "../icons/Mail.astro";
-import SocialMedia from "../components/SocialMedia.astro";
 import GitHub from "../icons/GitHub.astro";
-import Upload from "../icons/Upload.astro";
+import FileText from "../icons/FileText.astro";
+import { getDict, type Lang } from "../i18n";
+import { CV_FILES, LINKS } from "../data/links";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getDict(lang).hero;
 ---
 
-<div class="max-w-xl">
-  <div class="flex items-center gap-4 mb-6" data-reveal>
-    <img
-      class="rounded-full shadow-lg size-16 ring-2 ring-white/10"
-      src="/avatar.webp"
-      alt={personalImageAlt}
+<div class="max-w-2xl">
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-3 mb-6" data-reveal>
+    <Image
+      class="rounded-full shadow-lg size-16 ring-2 ring-white/10 object-cover"
+      src={avatar}
+      alt={t.avatarAlt}
+      width={64}
+      height={64}
+      densities={[1, 2, 3]}
+      loading="eager"
     />
     <a
-      href="https://www.linkedin.com/in/pablo-javier-mont%C3%ADcoli-b69733248/"
+      href={LINKS.linkedin}
       target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
+      rel="noopener noreferrer"
+      class="group rounded-full"
     >
-      <Badge>
-        <span data-i18n="openToWorkBadge">Working at Allata</span>
-      </Badge>
+      <Badge>{t.status}</Badge>
     </a>
   </div>
   <h1
     class="text-5xl font-bold tracking-tight text-white sm:text-6xl"
-    data-i18n="helloMessage"
     data-reveal
   >
-    Hey, I'm Pablo
+    {t.greeting}
   </h1>
   <p
     class="mt-6 text-xl leading-relaxed text-white/70 [&>strong]:text-yellow-300 [&>strong]:font-semibold"
     data-reveal
-  >
-    <span data-i18n="experienceMessage">
-      Full Stack Developer with 3+ years of experience in
-    </span>
-    <strong class="notranslate" data-i18n="roleDescription">
-      AI-powered solutions.
-    </strong>
-    <span data-i18n="fromLocation">Based in Córdoba, Argentina.</span>
+    set:html={t.lead}
+  />
+  <p class="mt-3 flex items-center gap-2 text-base text-white/60" data-reveal>
+    {t.location}
     <img
       src="/flags/ar.svg"
-      alt="Argentina"
+      alt=""
       width="20"
       height="15"
-      class="inline-block h-[0.85em] w-auto rounded-[2px] align-baseline"
+      class="h-[0.85em] w-auto rounded-[2px]"
     />
-    <span data-i18n="specializedMessage">
-      I build scalable web applications and leverage AI to deliver real
-      business impact.
-    </span>
   </p>
 
-  <nav class="flex flex-wrap gap-4 mt-8" data-reveal>
-    <SocialMedia href="https://github.com/PJMonticoli">
-      <GitHub class="size-4" />
+  <div class="flex flex-wrap gap-3 mt-8" data-reveal>
+    <SocialMedia href={CV_FILES[lang]} label={t.cvLabel} primary>
+      <FileText class="size-4" />
+      {t.cv}
+    </SocialMedia>
+    <SocialMedia href={LINKS.github}>
+      <GitHub class="size-4" aria-hidden="true" />
       GitHub
     </SocialMedia>
-    <SocialMedia
-      href="https://www.linkedin.com/in/pablo-javier-mont%C3%ADcoli-b69733248/"
-    >
-      <LinkedInIcon class="size-4" />
+    <SocialMedia href={LINKS.linkedin}>
+      <LinkedInIcon class="size-4" aria-hidden="true" />
       LinkedIn
     </SocialMedia>
-    <SocialMedia href="mailto:pablo_monticoli@hotmail.com">
-      <MailIcon class="size-4" />
-      <span data-i18n="mailText">Contact me</span>
+    <SocialMedia href={LINKS.email} newTab={false}>
+      <MailIcon class="size-4" aria-hidden="true" />
+      {t.contact}
     </SocialMedia>
-    <SocialMedia
-      href="/MonticoliPabloResume.pdf"
-      download="MonticoliPabloResume.pdf"
-    >
-      <Upload class="size-4" />
-      Cv
-    </SocialMedia>
-  </nav>
+  </div>
 </div>

@@ -3,15 +3,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll<HTMLElement>("[data-section]");
   const navLinks = document.querySelectorAll<HTMLAnchorElement>(
-    '#main-nav a[href^="/#"]',
+    "#main-nav a[data-nav]",
   );
   if (!sections.length || !navLinks.length) return;
 
   const setActive = (id: string | null) => {
     navLinks.forEach((link) => {
-      const isActive = id !== null && link.getAttribute("href") === `/#${id}`;
+      const isActive = id !== null && link.dataset.nav === id;
       link.classList.toggle("text-yellow-400", isActive);
       link.classList.toggle("text-white/70", !isActive);
+      if (isActive) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
     });
   };
 
