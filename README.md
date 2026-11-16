@@ -1,50 +1,67 @@
-Portfolio Developed with Astro
 
-!Main Section
+# Portfolio Developed with Astro
 
-Personal portfolio developed with Astro, using Tailwind CSS for styling and various visual resources to create a modern and responsive experience.
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/15bb4c7e-6a81-4e0e-a408-f7c05bd2ccc4"
+    alt="Portfolio Main Section"
+    width="100%"
+  />
+</p>
 
-Prerequisites
+Personal portfolio built with [Astro](https://astro.build/), using Tailwind CSS and modern web technologies to deliver a responsive, interactive, and visually engaging experience.
 
-Before getting started, make sure you have installed:
+## Prerequisites
 
-Node.js (v14.0.0 or higher).
-npm (v6.0.0 or higher).
-Installation and Setup
-Clone the repository
-bash
+Before getting started, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
+
+## Installation and Setup
+
+### 1. Clone the repository
+
+```bash
 git clone <REPOSITORY_URL>
 cd pablodevportfolio
+```
 
-Install dependencies
-bash
+### 2. Install dependencies
+
+```bash
 npm install
+```
 
-Install Tailwind CSS
-bash
-npm install -D tailwindcss
-npx astro add tailwind
+### 3. Start the development server
 
-Initialize Tailwind CSS configuration (optional)
-bash
-npx tailwindcss init
-
-Start the development server
-bash
+```bash
 npm run dev
+```
 
+Astro will display the local development URL in your terminal. Open it in your browser to preview the portfolio.
 
-Once the server is running, Astro will display the local URL in your terminal so you can preview the project.
+## Screenshots
 
-Resources & Tools
+<p align="center">
+  <img
+    src="./public/images/portfolio-preview.png"
+    alt="Portfolio Preview"
+    width="100%"
+  />
+</p>
 
-The following resources were used during development:
+## Resources & Tools
 
-BG by ibelick – Backgrounds and visual effects.
-Flowbite – UI components and design inspiration.
-Tabler Icons – Icon library.
-SVGL – SVG logos and assets.
-Shots – Design presentation and mockups.
-Squoosh – Image optimization.
+This project uses the following resources and tools:
 
-Developed by Pablo Monticoli.
+- **[BG by ibelick](https://bg.ibelick.com/)** – Backgrounds and visual effects.
+- **[Flowbite](https://flowbite.com/)** – UI components and design inspiration.
+- **[Tabler Icons](https://tabler.io/icons)** – Icon library.
+- **[SVGL](https://svgl.app/)** – SVG logos and assets.
+- **[Shots](https://shots.so/)** – Design mockups and presentations.
+- **[Squoosh](https://squoosh.app/)** – Image optimization.
+
+---
+
+**Developed by [Pablo Monticoli](https://github.com/).**
