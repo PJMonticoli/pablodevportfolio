@@ -1,60 +1,50 @@
+Portfolio Developed with Astro
 
-# Portfolio desarrollado con Astro
-<img width="1157" height="892" alt="Main Section" src="<img width="1038" height="565" alt="imagen" src="https://github.com/user-attachments/assets/a91a7b68-fa3d-4a4d-8627-91113597578d" />
-" />
+!Main Section
+
+Personal portfolio developed with Astro, using Tailwind CSS for styling and various visual resources to create a modern and responsive experience.
+
+Prerequisites
+
+Before getting started, make sure you have installed:
+
+Node.js (v14.0.0 or higher).
+npm (v6.0.0 or higher).
+Installation and Setup
+Clone the repository
+bash
+git clone <REPOSITORY_URL>
+cd pablodevportfolio
+
+Install dependencies
+bash
+npm install
+
+Install Tailwind CSS
+bash
+npm install -D tailwindcss
+npx astro add tailwind
+
+Initialize Tailwind CSS configuration (optional)
+bash
+npx tailwindcss init
+
+Start the development server
+bash
+npm run dev
 
 
+Once the server is running, Astro will display the local URL in your terminal so you can preview the project.
 
+Resources & Tools
 
+The following resources were used during development:
 
+BG by ibelick – Backgrounds and visual effects.
+Flowbite – UI components and design inspiration.
+Tabler Icons – Icon library.
+SVGL – SVG logos and assets.
+Shots – Design presentation and mockups.
+Squoosh – Image optimization.
 
-
-
-
-
-
-## Requisitos Previos
-
-- Node.js (v14.0.0 o superior)
-- npm (v6.0.0 o superior)
-
-## Crear una Nueva Aplicación Astro
-
-
-1. **Instalar `create-astro`** (opcional, si deseas usarlo globalmente):
-    ```sh
-    npm install -g create-astro
-    ```
-
-2. **Crear una nueva aplicación Astro**:
-    ```sh
-    npm create astro@latest
-    ```
-
-3. **Instalar las dependencias**:
-    ```sh
-    npm install
-    ```
-4. **Instalar tailwindcss**:
-    ```sh
-    npm install -D tailwindcss
-    npx astro add tailwind
-    ```
-5. **Configurar tailwind**:
-    ```sh
-     npx tailwindcss init
-    ``` 
-5. **Iniciar el servidor de desarrollo**:
-    ```sh
-    npm run dev
-    ```
-
-    
-    
-# Recursos utilizados
-- https://bg.ibelick.com
-- https://flowbite.com/
-- https://tabler.io/icons
-- https://svgl.app/
-- https://shots.so/
-- https://squoosh.app/
+Developed by Pablo Monticoli.
