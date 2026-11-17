@@ -1,0 +1,31 @@
+---
+import { getDict, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = getDict(Astro.props.lang).stack;
+---
+
+<dl class="border-t border-white/10">
+  {
+    t.groups.map((group) => (
+      <div
+        class="grid gap-3 border-b border-white/10 py-5 md:grid-cols-[14rem_1fr] md:gap-10"
+        data-reveal
+      >
+        <dt class="font-semibold text-white text-balance">{group.name}</dt>
+        <dd>
+          <ul class="flex flex-wrap gap-2">
+            {group.items.map((item) => (
+              <li class="rounded-full bg-white/5 px-3 py-1 text-sm text-white/80 ring-1 ring-white/10">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </dd>
+      </div>
+    ))
+  }
+</dl>

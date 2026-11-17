@@ -1,0 +1,31 @@
+---
+import { getDict, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = getDict(Astro.props.lang).workflow;
+---
+
+<p class="max-w-2xl text-lg leading-relaxed text-white/70" data-reveal>
+  {t.intro}
+</p>
+
+<dl class="mt-10 border-t border-white/10">
+  {
+    t.items.map((item) => (
+      <div
+        class="grid gap-2 border-b border-white/10 py-6 md:grid-cols-[14rem_1fr] md:gap-10"
+        data-reveal
+      >
+        <dt class="text-lg font-semibold text-white">{item.title}</dt>
+        <dd class="leading-relaxed text-white/70">{item.text}</dd>
+      </div>
+    ))
+  }
+</dl>
+
+<p class="mt-6 max-w-2xl text-sm leading-relaxed text-white/60" data-reveal>
+  {t.note}
+</p>

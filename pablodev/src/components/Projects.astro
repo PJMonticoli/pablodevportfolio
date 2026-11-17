@@ -1,8 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import LinkButton from "./LinkButton.astro";
 import GitHub from "../icons/GitHub.astro";
 import AngularIcon from "../icons/Angular.astro";
-import SupabaseIcon from "../icons/Supabase.astro";
 import MysqlIcon from "../icons/Mysql.astro";
 import BootstrapIcon from "../icons/Bootstrap.astro";
 import CssIcon from "../icons/Css.astro";
@@ -14,152 +14,159 @@ import VueIcon from "../icons/vue.astro";
 import MongoIcon from "../icons/MongoDB.astro";
 import NodeIcon from "../icons/Node.astro";
 import SqlIcon from "../icons/Sql.astro";
-import NetIcon from "../icons/net.astro";
 import JavaScriptIcon from "../icons/JavaScript.astro";
+import dockwitcherImage from "../assets/dockwitcher.webp";
+import chocolateImage from "../assets/chocolate-shop.webp";
+import palletsImage from "../assets/pallets.webp";
+import pastaImage from "../assets/pasta-studio.webp";
+import { getDict, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = getDict(Astro.props.lang).projects;
+const NEUTRAL = "bg-white/10 text-white/80 ring-1 ring-white/20";
 
 const TAGS = {
-  ANGULAR: {
-    name: "Angular",
-    class: "bg-[#DD0031]/15 text-[#FF6B7A] ring-1 ring-[#DD0031]/30",
-    icon: AngularIcon,
-  },
-  SUPABASE: {
-    name: "Supabase",
-    class: "bg-[#3ECF8E]/15 text-[#3ECF8E] ring-1 ring-[#3ECF8E]/30",
-    icon: SupabaseIcon,
-  },
-  MYSQL: {
-    name: "MySQL",
-    class: "bg-[#00758F]/15 text-[#4FC3D9] ring-1 ring-[#00758F]/30",
-    icon: MysqlIcon,
-  },
-  BOOTSTRAP: {
-    name: "Bootstrap",
-    class: "bg-[#7952B3]/15 text-[#B79EE8] ring-1 ring-[#7952B3]/30",
-    icon: BootstrapIcon,
-  },
-  CSS: {
-    name: "CSS",
-    class: "bg-[#1572B6]/15 text-[#5CACEE] ring-1 ring-[#1572B6]/30",
-    icon: CssIcon,
-  },
-  HTML: {
-    name: "HTML",
-    class: "bg-[#E34F26]/15 text-[#FF8B6B] ring-1 ring-[#E34F26]/30",
-    icon: HtmlIcon,
-  },
-  TYPESCRIPT: {
-    name: "TypeScript",
-    class: "bg-[#3178C6]/15 text-[#7EB6F6] ring-1 ring-[#3178C6]/30",
-    icon: TypeScriptIcon,
-  },
-  JAVASCRIPT: {
-    name: "JavaScript",
-    class: "bg-[#F7DF1E]/15 text-[#F7DF1E] ring-1 ring-[#F7DF1E]/30",
-    icon: JavaScriptIcon,
-  },
-  JAVA: {
-    name: "Java",
-    class: "bg-[#5382A1]/15 text-[#8FB8D6] ring-1 ring-[#5382A1]/30",
-    icon: JavaIcon,
-  },
-  SPRING: {
-    name: "Spring",
-    class: "bg-[#6DB33F]/15 text-[#8FDB63] ring-1 ring-[#6DB33F]/30",
-    icon: SpringIcon,
-  },
-  VUE: {
-    name: "Vue",
-    class: "bg-[#42B883]/15 text-[#5FE0A8] ring-1 ring-[#42B883]/30",
-    icon: VueIcon,
-  },
-  MongoDB: {
-    name: "MongoDB",
-    class: "bg-[#47A248]/15 text-[#6FC96F] ring-1 ring-[#47A248]/30",
-    icon: MongoIcon,
-  },
-  NodeJs: {
-    name: "NodeJs",
-    class: "bg-[#3C873A]/15 text-[#6FC96F] ring-1 ring-[#3C873A]/30",
-    icon: NodeIcon,
-  },
-  SqlIcon: {
-    name: "Sql",
-    class: "bg-white/10 text-white/80 ring-1 ring-white/20",
-    icon: SqlIcon,
-  },
-  NetIcon: {
-    name: "Net",
-    class: "bg-[#512BD4]/15 text-[#9C87F0] ring-1 ring-[#512BD4]/30",
-    icon: NetIcon,
-  },
+  CLAUDE_CODE: { name: "Claude Code", class: "bg-yellow-400/10 text-yellow-300 ring-1 ring-yellow-400/30", icon: null },
+  MCP: { name: "MCP", class: NEUTRAL, icon: null },
+  PYTHON: { name: "Python", class: NEUTRAL, icon: null },
+  PINE: { name: "Pine Script", class: NEUTRAL, icon: null },
+  POWERSHELL: { name: "PowerShell", class: NEUTRAL, icon: null },
+  ANGULAR: { name: "Angular", class: "bg-[#DD0031]/15 text-[#FF6B7A] ring-1 ring-[#DD0031]/30", icon: AngularIcon },
+  MYSQL: { name: "MySQL", class: "bg-[#00758F]/15 text-[#4FC3D9] ring-1 ring-[#00758F]/30", icon: MysqlIcon },
+  BOOTSTRAP: { name: "Bootstrap", class: "bg-[#7952B3]/15 text-[#B79EE8] ring-1 ring-[#7952B3]/30", icon: BootstrapIcon },
+  CSS: { name: "CSS", class: "bg-[#1572B6]/15 text-[#5CACEE] ring-1 ring-[#1572B6]/30", icon: CssIcon },
+  HTML: { name: "HTML", class: "bg-[#E34F26]/15 text-[#FF8B6B] ring-1 ring-[#E34F26]/30", icon: HtmlIcon },
+  TYPESCRIPT: { name: "TypeScript", class: "bg-[#3178C6]/15 text-[#7EB6F6] ring-1 ring-[#3178C6]/30", icon: TypeScriptIcon },
+  JAVASCRIPT: { name: "JavaScript", class: "bg-[#F7DF1E]/15 text-[#F7DF1E] ring-1 ring-[#F7DF1E]/30", icon: JavaScriptIcon },
+  JAVA: { name: "Java", class: "bg-[#5382A1]/15 text-[#8FB8D6] ring-1 ring-[#5382A1]/30", icon: JavaIcon },
+  SPRING: { name: "Spring Boot", class: "bg-[#6DB33F]/15 text-[#8FDB63] ring-1 ring-[#6DB33F]/30", icon: SpringIcon },
+  VUE: { name: "Vue.js", class: "bg-[#42B883]/15 text-[#5FE0A8] ring-1 ring-[#42B883]/30", icon: VueIcon },
+  MONGODB: { name: "MongoDB", class: "bg-[#47A248]/15 text-[#6FC96F] ring-1 ring-[#47A248]/30", icon: MongoIcon },
+  NODE: { name: "Node.js", class: "bg-[#3C873A]/15 text-[#6FC96F] ring-1 ring-[#3C873A]/30", icon: NodeIcon },
+  SQL: { name: "SQL", class: NEUTRAL, icon: SqlIcon },
+  DOTNET: { name: ".NET", class: "bg-[#512BD4]/15 text-[#9C87F0] ring-1 ring-[#512BD4]/30", icon: null },
 };
+
+const wsp = t.items.wallstreetpro;
+const WSP_REPO = "https://github.com/PJMonticoli/wallstreetpro";
+const WSP_TAGS = [TAGS.CLAUDE_CODE, TAGS.MCP, TAGS.PYTHON, TAGS.PINE, TAGS.POWERSHELL];
 
 const PROJECTS = [
   {
-    titleKey: "title1",
-    title: "Front-End with Angular",
-    descriptionKey: "description1",
-    description:
-      "An online store for a chocolate shop where customers can browse and purchase products. By becoming a member, users gain access to exclusive benefits. Shop owners can manage inventory, set up promotions and access detailed sales reports and analytics.",
-    github: "https://github.com/PJMonticoli/FrontEndChocolateria.git",
-    image: "/ecommerce.webp",
-    tags: [TAGS.ANGULAR, TAGS.HTML, TAGS.CSS, TAGS.TYPESCRIPT, TAGS.BOOTSTRAP],
+    ...t.items.dockwitcher,
+    image: dockwitcherImage,
+    tags: [TAGS.VUE, TAGS.SPRING, TAGS.JAVA, TAGS.MONGODB],
+    repos: [{ label: t.code, href: "https://github.com/PJMonticoli/dockwitcher-app" }],
   },
   {
-    titleKey: "title2",
-    title: "Back-End with NodeJs",
-    descriptionKey: "description2",
-    description:
-      "The backend API for the online chocolate shop was developed using Node.js (Express.js Framework) conected with MySQL. This robust and scalable server-side application supports various functionalities required to run a dynamic and interactive online store.",
-    github: "https://github.com/PJMonticoli/BackEndChocolateria.git",
-    image: "/backendproject.webp",
-    tags: [TAGS.NodeJs, TAGS.MYSQL],
+    ...t.items.chocolate,
+    image: chocolateImage,
+    tags: [TAGS.ANGULAR, TAGS.TYPESCRIPT, TAGS.BOOTSTRAP, TAGS.NODE, TAGS.MYSQL],
+    repos: [
+      { label: t.frontend, href: "https://github.com/PJMonticoli/FrontEndChocolateria" },
+      { label: t.api, href: "https://github.com/PJMonticoli/BackEndChocolateria" },
+    ],
   },
   {
-    titleKey: "title3",
-    title: ".NET Framework Project",
-    descriptionKey: "description3",
-    description:
-      "Pallet Management System - A .NET Framework application designed to manage pallet logistics operations. The system tracks pallet movements, monitors conditions, and manages relationships with transporters and clients. Features include real-time inventory tracking, automated reporting, and an intuitive interface for streamlined logistics operations.",
-    github: "https://github.com/PJMonticoli/netprojectpallets",
-    image: "/netproject.webp",
-    tags: [TAGS.SqlIcon, TAGS.NetIcon],
+    ...t.items.pallets,
+    image: palletsImage,
+    tags: [TAGS.DOTNET, TAGS.SQL],
+    repos: [{ label: t.code, href: "https://github.com/PJMonticoli/netprojectpallets" }],
   },
   {
-    titleKey: "title4",
-    title: "Pasta Studio — Pre-Launch Landing Page",
-    descriptionKey: "description4",
-    description:
-      "Landing page for the opening of Pasta Studio®, a contemporary Italian restaurant in Córdoba, Argentina. Built with Vite and Vanilla JS, featuring a real-time countdown, scroll-snap navigation, Google Maps integration and brand-aligned design. Deployed on Netlify, optimized for mobile QR code access.",
-    github: "https://github.com/PJMonticoli/pasta-studio",
-    image: "/pastastudio.webp",
+    ...t.items.pasta,
+    image: pastaImage,
     tags: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
-  },
-  {
-    titleKey: "title5",
-    title: "Hotaka iKhodi Bootcamp Project",
-    descriptionKey: "description5",
-    description:
-      "Dockwitcher is a web-based logistics platform streamlining transportation and loading operations for industrial sectors. The solution centralizes fleet and dock management, offers real-time tracking, and provides proactive notifications, enhancing logistics efficiency and security.",
-    github: "https://github.com/PJMonticoli/dockwitcher-app.git",
-    image: "/dockwitcher.webp",
-    tags: [TAGS.VUE, TAGS.SPRING, TAGS.JAVA, TAGS.MongoDB],
+    repos: [{ label: t.code, href: "https://github.com/PJMonticoli/pasta-studio" }],
   },
 ];
 ---
 
-<div class="flex flex-col gap-y-20">
+<article
+  class="spotlight-card group relative overflow-clip rounded-2xl border border-yellow-400/25 bg-white/[0.03] p-6 md:p-8"
+  data-reveal
+>
+  <div
+    class="spotlight-overlay pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 md:group-hover:opacity-100"
+    aria-hidden="true"
+  >
+  </div>
+  <div class="relative grid gap-8 md:grid-cols-2 md:gap-10">
+    <div class="flex flex-col gap-4">
+      <h3 class="text-3xl font-bold text-white">{wsp.title}</h3>
+      <ul class="flex flex-row flex-wrap gap-2">
+        {
+          WSP_TAGS.map((tag) => (
+            <li class={`rounded-full text-xs font-medium ${tag.class} py-1 px-2.5`}>
+              {tag.name}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="text-white/70 leading-relaxed">{wsp.text}</p>
+      <p class="text-white/70 leading-relaxed">{wsp.text2}</p>
+      <div class="mt-1">
+        <LinkButton href={WSP_REPO} label={`${t.code}: ${wsp.title}`}>
+          <GitHub class="size-6" aria-hidden="true" />
+          {t.code}
+        </LinkButton>
+      </div>
+    </div>
+
+    <div class="self-center">
+      <table class="w-full text-sm">
+        <caption class="pb-3 text-left text-sm font-medium text-white/80">
+          {wsp.tableCaption}
+        </caption>
+        <thead>
+          <tr class="border-b border-white/15 text-left text-xs text-white/60">
+            <th scope="col" class="py-2 pr-3 font-medium">{wsp.colCondition}</th>
+            <th scope="col" class="py-2 px-3 text-right font-medium whitespace-nowrap">{wsp.colNeeded}</th>
+            <th scope="col" class="py-2 pl-3 text-right font-medium whitespace-nowrap">{wsp.colMeasured}</th>
+          </tr>
+        </thead>
+        <tbody class="tabular-nums">
+          {
+            wsp.rows.map((row) => (
+              <tr class="border-b border-white/10">
+                <th scope="row" class="py-2.5 pr-3 text-left font-normal text-white/70">
+                  {row.name}
+                </th>
+                <td class="py-2.5 px-3 text-right font-mono text-white/60 whitespace-nowrap">
+                  {row.needed}
+                </td>
+                <td class="py-2.5 pl-3 text-right font-mono font-semibold text-yellow-300 whitespace-nowrap">
+                  {row.measured}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <p class="mt-3 text-sm text-white/60">{wsp.tableNote}</p>
+    </div>
+  </div>
+</article>
+
+<div class="mt-20 flex flex-col gap-y-20">
   {
-    PROJECTS.map(({ image, titleKey, title, descriptionKey, description, tags, github }, index) => (
-      <article class={`flex flex-col gap-6 group md:gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`} data-reveal>
+    PROJECTS.map(({ image, title, text, alt, tags, repos }, index) => (
+      <article
+        class={`flex flex-col gap-6 group md:gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+        data-reveal
+      >
         <div class="w-full md:w-1/2">
-          <div class="spotlight-card relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition-[transform,box-shadow,border-color] duration-300 ease-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl border border-white/10 md:group-hover:-translate-y-1 md:group-hover:shadow-2xl md:group-hover:border-white/20">
-            <img
-              alt="Project Image"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
+          <div class="spotlight-card relative aspect-[5/3] transition-[transform,box-shadow,border-color] duration-300 ease-out shadow-xl overflow-clip rounded-xl border border-white/10 md:group-hover:-translate-y-1 md:group-hover:shadow-2xl md:group-hover:border-white/20 motion-reduce:transform-none">
+            <Image
               src={image}
+              alt={alt}
+              widths={[480, 720, 960]}
+              sizes="(min-width: 1024px) 432px, (min-width: 768px) 320px, 100vw"
+              class="object-cover object-top w-full h-full transition duration-500 md:group-hover:scale-105 motion-reduce:transform-none"
+              loading="lazy"
             />
             <div
               class="spotlight-overlay pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 md:group-hover:opacity-100"
@@ -170,34 +177,28 @@ const PROJECTS = [
         </div>
 
         <div class="flex flex-col w-full gap-3 md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-white" data-i18n={titleKey}>
-            {title}
-          </h3>
+          <h3 class="text-2xl font-bold text-white text-balance">{title}</h3>
 
           <ul class="flex flex-row flex-wrap gap-2">
             {tags.map((tag) => (
-              <li>
-                <span
-                  class={`flex items-center gap-x-1.5 rounded-full text-xs font-medium ${tag.class} py-1 px-2.5`}
-                >
-                  <tag.icon class="size-4" />
-                  {tag.name}
-                </span>
+              <li
+                class={`flex items-center gap-x-1.5 rounded-full text-xs font-medium ${tag.class} py-1 px-2.5`}
+              >
+                {tag.icon && <tag.icon class="size-4" aria-hidden="true" />}
+                {tag.name}
               </li>
             ))}
           </ul>
 
-          <div class="text-white/70 leading-relaxed" data-i18n={descriptionKey}>
-            {description}
-          </div>
-          <footer class="flex items-end justify-start mt-2 gap-x-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHub class="size-6" />
-                <span data-i18n="buttonText">Code</span>
+          <p class="text-white/70 leading-relaxed">{text}</p>
+          <div class="flex flex-wrap items-end justify-start mt-2 gap-3">
+            {repos.map((repo) => (
+              <LinkButton href={repo.href} label={`${repo.label}: ${title}`}>
+                <GitHub class="size-6" aria-hidden="true" />
+                {repo.label}
               </LinkButton>
-            )}
-          </footer>
+            ))}
+          </div>
         </div>
       </article>
     ))
