@@ -23,7 +23,7 @@ Before getting started, make sure you have the following installed:
 ### 1. Clone the repository
 
 ```bash
-git clone <REPOSITORY_URL>
+git clone https://github.com/PJMonticoli/pablodevportfolio.git
 cd pablodevportfolio
 ```
 
