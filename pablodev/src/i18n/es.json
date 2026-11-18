@@ -28,26 +28,26 @@
   },
   "workflow": {
     "title": "Cómo trabajo con AI",
-    "intro": "En el trabajo con clientes desarrollo con Claude Code. Alrededor armé un sistema para que cada sesión arranque con lo que necesita y respete las reglas del proyecto.",
+    "intro": "En el trabajo con clientes desarrollo con Claude Code. Alrededor armé algunas piezas para que cada sesión arranque con el contexto correcto y respete las reglas del proyecto.",
     "items": [
       {
         "title": "Contexto por proyecto",
-        "text": "Cada proyecto tiene su base de conocimiento, escrita como una wiki que el agente lee (el patrón LLM Wiki). La sesión arranca con el contexto del proyecto y el tablero de tareas cargados, así no explico el código de nuevo cada vez."
+        "text": "Cada proyecto tiene una wiki que el agente lee (el patrón LLM Wiki). La sesión arranca con esa wiki y el tablero de tareas cargados, así no explico el código de nuevo."
       },
       {
         "title": "Hooks como guardrails",
-        "text": "Los hooks son scripts que corren en puntos fijos de la sesión. Las reglas que se tienen que cumplir siempre corren ahí como código, así no dependen de que el modelo recuerde una instrucción."
+        "text": "Las reglas que se tienen que cumplir siempre corren como scripts en puntos fijos de la sesión, así no dependen de que el modelo recuerde una instrucción."
       },
       {
         "title": "Skills y plugins",
-        "text": "El trabajo que repito se convierte en una skill: leer una tarea, revisar un pull request, documentar un cambio, cerrar una tarea. Escribo los pasos y los controles una vez y los reutilizo."
+        "text": "Las tareas que repito se vuelven skills, como revisar un pull request o cerrar una tarea. Escribo los pasos y los controles una vez y los reutilizo."
       },
       {
         "title": "Ajuste continuo",
-        "text": "Voy ajustando qué se carga, cuándo y cuánto. El objetivo es mejores resultados con menos tokens."
+        "text": "Voy ajustando qué se carga y cuándo, para lograr mejores resultados con menos tokens."
       }
     ],
-    "note": "Este es el sistema que uso con clientes. RAG, LangChain, LangGraph y n8n son, por ahora, formación y proyectos personales."
+    "note": "Por ahora, RAG, LangChain, LangGraph y n8n los usé solo en formación y proyectos personales."
   },
   "experience": {
     "title": "Experiencia",
@@ -59,7 +59,7 @@
         "company": "Allata",
         "date": "Abr 2026 - actualidad",
         "place": "Estados Unidos / Remoto",
-        "text": "Desarrollo de software empresarial para un cliente de Estados Unidos, con contacto diario para estimaciones, decisiones técnicas y revisión de código. También armé el flujo de trabajo con AI que uso en el proyecto: Claude Code con una base de conocimiento por proyecto, hooks, skills y plugins propios."
+        "text": "Desarrollo software empresarial para un cliente de Estados Unidos y hablo todos los días con su equipo sobre estimaciones, decisiones técnicas y revisión de código. También armé el flujo de trabajo con AI del proyecto, sobre Claude Code con hooks, skills y plugins propios."
       },
       {
         "id": "allata-senior",
@@ -67,7 +67,7 @@
         "company": "Allata",
         "date": "May 2025 - abr 2026",
         "place": "Estados Unidos / Remoto",
-        "text": "Desarrollé funcionalidades full stack para clientes de Estados Unidos dentro de arquitecturas existentes, usando AI en todo el proceso de desarrollo. Detecté riesgos a tiempo y mantuve una comunicación clara con el equipo y con el cliente."
+        "text": "Desarrollé funcionalidades full stack para clientes de Estados Unidos dentro de arquitecturas existentes, con AI en todo el proceso. Avisaba los riesgos a tiempo al equipo y al cliente."
       },
       {
         "id": "hotaka",
@@ -75,7 +75,7 @@
         "company": "Hotaka iKhodi",
         "date": "Oct 2024 - may 2025",
         "place": "Barcelona / Remoto",
-        "text": "Desarrollé servicios backend con Python/Django, Java/Spring Boot, Kotlin y .NET, y frontends en Vue.js, con MongoDB como base de datos principal. También desarrollé módulos a medida para Odoo y colaboré en procesos ETL y reportes en Power BI."
+        "text": "Desarrollé servicios backend con Python/Django, Java/Spring Boot, Kotlin y .NET, y frontends en Vue.js, casi siempre sobre MongoDB. También hice módulos a medida para el ERP Odoo y colaboré con procesos ETL y reportes en Power BI."
       },
       {
         "id": "guma",
@@ -83,7 +83,7 @@
         "company": "José Guma S.A.",
         "date": "Ago 2023 - oct 2024",
         "place": "Colonia Caroya, Córdoba",
-        "text": "Desarrollé aplicaciones empresariales con C#/.NET y Angular, y administré bases de datos PostgreSQL y SQL Server. Combiné mi formación contable y administrativa con análisis de datos para detectar e implementar mejoras en varios sistemas internos."
+        "text": "Desarrollé aplicaciones empresariales con C#/.NET y Angular, y administré bases de datos PostgreSQL y SQL Server. Mi formación contable y el análisis de datos me sirvieron para encontrar e implementar mejoras en varios sistemas internos."
       }
     ]
   },
@@ -92,11 +92,13 @@
     "code": "Código",
     "frontend": "Front end",
     "api": "API",
+    "more": "Ver más",
+    "less": "Ver menos",
     "items": {
       "wallstreetpro": {
         "title": "WallStreetPro",
         "text": "Un sistema de análisis para swing trading que corre sobre Claude Code. Una vez por semana lee datos de TradingView por un servidor MCP, revisa un conjunto corto de reglas y responde BUY o NO BUY con entrada, stop y fecha de salida. Nunca ejecuta una orden.",
-        "text2": "Probé las reglas con un backtest de 5.533 operaciones simuladas sobre 446 tickers, de 2015 a 2026. No tenían ventaja sobre el mercado, así que reduje los controles de 10 a 5 y dejé lo que los datos respaldaban.",
+        "text2": "Probé las reglas con un backtest de 5.533 operaciones simuladas (446 tickers, 2015 a 2026). No tenían ventaja sobre el mercado, así que en la versión 5 saqué la mitad de los 10 controles y dejé los que los datos respaldaban.",
         "tableCaption": "Condiciones de aprobación, escritas antes de correrlo",
         "colCondition": "Condición",
         "colNeeded": "Pedía",
@@ -107,16 +109,17 @@
           { "name": "Alfa contra SPY", "needed": "> +0,10R", "measured": "-0,139R" },
           { "name": "Años con esperanza positiva", "needed": "8 de 12", "measured": "3 de 12" }
         ],
-        "tableNote": "Resultado: 0 de 4. La versión 5 se quedó con 5 de las 10 reglas."
+        "tableNote": "Resultado: pasó 0 de 4."
       },
       "dockwitcher": {
         "title": "Dockwitcher",
-        "text": "Plataforma de logística para transporte y muelles de carga, desarrollada en el Bootcamp Full Stack de Hotaka iKhodi. Reúne la gestión de flota y de muelles en un solo lugar, con seguimiento en tiempo real y notificaciones.",
+        "text": "Una plataforma de logística que reúne la gestión de flota y de muelles de carga, con seguimiento en tiempo real y notificaciones. La desarrollé en el Bootcamp Full Stack de Hotaka iKhodi.",
         "alt": "Pantalla de Dockwitcher con la lista de recepciones y su estado"
       },
       "chocolate": {
         "title": "E-commerce para una chocolatería",
-        "text": "Proyecto freelance de 2023. Una tienda online para una chocolatería: los clientes recorren el catálogo y compran, los socios tienen beneficios y los dueños gestionan stock, promociones y reportes de ventas. Front end en Angular y una API en Node.js y Express sobre MySQL.",
+        "text": "Una tienda online para una chocolatería, proyecto freelance de 2023. Los clientes recorren el catálogo y compran, y los socios tienen beneficios.",
+        "more": "Los dueños gestionan stock, promociones y reportes de ventas. Front end en Angular y una API en Node.js y Express sobre MySQL.",
         "alt": "Página de inicio de la tienda de la chocolatería"
       },
       "pallets": {
@@ -126,7 +129,8 @@
       },
       "pasta": {
         "title": "Pasta Studio, landing de lanzamiento",
-        "text": "Landing que diseñé y desarrollé para la apertura de Pasta Studio en abril de 2026, un restaurante italiano en Córdoba, Argentina. Vite y JavaScript sin frameworks, con cuenta regresiva en vivo, navegación con scroll-snap y Google Maps, pensada para abrirse desde un QR en el celular. El repo tiene mi versión; después los dueños cambiaron el sitio.",
+        "text": "Landing que diseñé y desarrollé para la apertura de Pasta Studio en abril de 2026, un restaurante italiano en Córdoba, Argentina. Está pensada para abrirse desde un QR en el celular.",
+        "more": "Vite y JavaScript sin frameworks, con cuenta regresiva en vivo, navegación con scroll-snap y Google Maps. El repo tiene mi versión; después los dueños cambiaron el sitio.",
         "alt": "Landing de Pasta Studio con la cuenta regresiva a la apertura"
       }
     }

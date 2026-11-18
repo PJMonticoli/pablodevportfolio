@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import LinkButton from "./LinkButton.astro";
+import ReadMore from "./ReadMore.astro";
 import GitHub from "../icons/GitHub.astro";
 import AngularIcon from "../icons/Angular.astro";
 import MysqlIcon from "../icons/Mysql.astro";
@@ -54,7 +55,17 @@ const wsp = t.items.wallstreetpro;
 const WSP_REPO = "https://github.com/PJMonticoli/wallstreetpro";
 const WSP_TAGS = [TAGS.CLAUDE_CODE, TAGS.MCP, TAGS.PYTHON, TAGS.PINE, TAGS.POWERSHELL];
 
-const PROJECTS = [
+interface ProjectCard {
+  title: string;
+  text: string;
+  more?: string;
+  alt: string;
+  image: ImageMetadata;
+  tags: (typeof TAGS)[keyof typeof TAGS][];
+  repos: { label: string; href: string }[];
+}
+
+const PROJECTS: ProjectCard[] = [
   {
     ...t.items.dockwitcher,
     image: dockwitcherImage,
@@ -153,7 +164,7 @@ const PROJECTS = [
 
 <div class="mt-20 flex flex-col gap-y-20">
   {
-    PROJECTS.map(({ image, title, text, alt, tags, repos }, index) => (
+    PROJECTS.map(({ image, title, text, more, alt, tags, repos }, index) => (
       <article
         class={`flex flex-col gap-6 group md:gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
         data-reveal
@@ -191,6 +202,11 @@ const PROJECTS = [
           </ul>
 
           <p class="text-white/70 leading-relaxed">{text}</p>
+          {more && (
+            <ReadMore more={t.more} less={t.less}>
+              <p class="text-white/70 leading-relaxed">{more}</p>
+            </ReadMore>
+          )}
           <div class="flex flex-wrap items-end justify-start mt-2 gap-3">
             {repos.map((repo) => (
               <LinkButton href={repo.href} label={`${repo.label}: ${title}`}>

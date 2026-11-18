@@ -28,26 +28,26 @@
   },
   "workflow": {
     "title": "How I work with AI",
-    "intro": "On client work I build with Claude Code. Around it I put together a setup, so each session starts with what it needs and stays inside the project's rules.",
+    "intro": "On client work I build with Claude Code. Around it I set up a few pieces so each session starts with the right context and follows the project's rules.",
     "items": [
       {
         "title": "Context per project",
-        "text": "Each project has its own knowledge base, written as a wiki the agent reads (the LLM Wiki pattern). A session starts with the project context and the task board loaded, so I don't explain the codebase again each time."
+        "text": "Each project has a wiki the agent reads (the LLM Wiki pattern). Sessions start with it and the task board loaded, so I don't explain the codebase again."
       },
       {
         "title": "Hooks as guardrails",
-        "text": "Hooks are scripts that run at fixed points of a session. The rules that have to hold every time run there as code, so they don't depend on the model remembering an instruction."
+        "text": "The rules that must always hold run as scripts at fixed points of the session, so they don't depend on the model remembering an instruction."
       },
       {
         "title": "Skills and plugins",
-        "text": "Work I repeat becomes a skill: reading a work item, reviewing a pull request, writing up a change, closing a task. I write the steps and the checks once and reuse them."
+        "text": "Tasks I repeat become skills, like reviewing a pull request or closing a work item. I write the steps and checks once and reuse them."
       },
       {
         "title": "Tuned over time",
-        "text": "I keep adjusting what gets loaded, when and how much. The goal is better output with fewer tokens."
+        "text": "I keep adjusting what gets loaded and when, to get better output with fewer tokens."
       }
     ],
-    "note": "This is the setup I use with clients. RAG, LangChain, LangGraph and n8n are training and personal projects so far."
+    "note": "So far I've used RAG, LangChain, LangGraph and n8n only in training and personal projects."
   },
   "experience": {
     "title": "Experience",
@@ -59,7 +59,7 @@
         "company": "Allata",
         "date": "Apr 2026 - Present",
         "place": "United States / Remote",
-        "text": "Software engineer on enterprise projects for a U.S. client. I work with client stakeholders every day on estimates, technical decisions and code reviews. I also set up the AI coding workflow used on the project: Claude Code with a knowledge base per project, custom hooks, skills and plugins."
+        "text": "Software engineer on enterprise projects for a U.S. client. I work with their stakeholders every day on estimates, technical decisions and code reviews. I also set up the project's AI coding workflow, built on Claude Code with custom hooks, skills and plugins."
       },
       {
         "id": "allata-senior",
@@ -67,7 +67,7 @@
         "company": "Allata",
         "date": "May 2025 - Apr 2026",
         "place": "United States / Remote",
-        "text": "Delivered full stack features for U.S. enterprise clients within established architectures, using AI tools across the development process. Flagged risks early and kept communication clear with the engineering team and client stakeholders."
+        "text": "Built full stack features for U.S. enterprise clients inside existing architectures, with AI tools at every step. I raised risks early with the team and the client."
       },
       {
         "id": "hotaka",
@@ -75,7 +75,7 @@
         "company": "Hotaka iKhodi",
         "date": "Oct 2024 - May 2025",
         "place": "Barcelona / Remote",
-        "text": "Built backend services with Python/Django, Java/Spring Boot, Kotlin and .NET, and Vue.js frontends, with MongoDB as the main database. Also developed custom Odoo ERP modules and helped with ETL processes and Power BI reports."
+        "text": "Built backend services with Python/Django, Java/Spring Boot, Kotlin and .NET, and Vue.js frontends, mostly on MongoDB. I also wrote custom Odoo ERP modules and helped with ETL and Power BI reports."
       },
       {
         "id": "guma",
@@ -83,7 +83,7 @@
         "company": "José Guma S.A.",
         "date": "Aug 2023 - Oct 2024",
         "place": "Colonia Caroya, Córdoba",
-        "text": "Built enterprise applications with C#/.NET and Angular, and managed PostgreSQL and SQL Server databases. Combined an accounting and administration background with data analysis to find and implement improvements across several internal systems."
+        "text": "Built enterprise applications with C#/.NET and Angular, and managed PostgreSQL and SQL Server databases. My accounting background and data analysis helped me find and ship improvements in several internal systems."
       }
     ]
   },
@@ -92,11 +92,13 @@
     "code": "Code",
     "frontend": "Front end",
     "api": "API",
+    "more": "Show more",
+    "less": "Show less",
     "items": {
       "wallstreetpro": {
         "title": "WallStreetPro",
         "text": "A swing trading analysis system that runs on Claude Code. Once a week it reads live chart data from TradingView through an MCP server, checks a short rule set and answers BUY or NO BUY with entry, stop and exit date. It never places an order.",
-        "text2": "I backtested the rules over 5,533 simulated trades on 446 tickers, from 2015 to 2026. They had no edge over the market, so I cut the guardrails from 10 to 5 and kept what the data supported.",
+        "text2": "I backtested the rules on 5,533 simulated trades (446 tickers, 2015 to 2026). They had no edge over the market, so in version 5 I dropped half of the 10 guardrails and kept the ones the data supported.",
         "tableCaption": "Pass conditions, written before the run",
         "colCondition": "Condition",
         "colNeeded": "Needed",
@@ -107,16 +109,17 @@
           { "name": "Alpha against SPY", "needed": "> +0.10R", "measured": "-0.139R" },
           { "name": "Years with positive expectancy", "needed": "8 of 12", "measured": "3 of 12" }
         ],
-        "tableNote": "Result: 0 of 4. Version 5 kept 5 of the 10 rules."
+        "tableNote": "Result: 0 of 4 passed."
       },
       "dockwitcher": {
         "title": "Dockwitcher",
-        "text": "Logistics platform for transport and loading docks, built during the Full Stack Bootcamp at Hotaka iKhodi. It puts fleet and dock management in one place, with real-time tracking and notifications.",
+        "text": "A logistics platform that puts fleet and loading dock management in one place, with real-time tracking and notifications. Built during the Full Stack Bootcamp at Hotaka iKhodi.",
         "alt": "Dockwitcher screen listing warehouse receptions with their status"
       },
       "chocolate": {
         "title": "Chocolate shop e-commerce",
-        "text": "Freelance project from 2023. An online store for a chocolate shop: customers browse and buy, members get benefits, and the owners manage stock, promotions and sales reports. Angular front end, with a Node.js and Express API on MySQL.",
+        "text": "A freelance online store for a chocolate shop, built in 2023. Customers browse and buy, and members get benefits.",
+        "more": "The owners manage stock, promotions and sales reports. Angular front end, with a Node.js and Express API on MySQL.",
         "alt": "Home page of the chocolate shop store"
       },
       "pallets": {
@@ -126,7 +129,8 @@
       },
       "pasta": {
         "title": "Pasta Studio, launch landing page",
-        "text": "Landing page I designed and built for the April 2026 opening of Pasta Studio, an Italian restaurant in Córdoba, Argentina. Vite and vanilla JavaScript, with a live countdown, scroll-snap navigation and Google Maps, made to be opened from a QR code on a phone. The repo holds my version; the owners have changed the site since.",
+        "text": "Landing page I designed and built for the April 2026 opening of Pasta Studio, an Italian restaurant in Córdoba, Argentina. It was made to be opened from a QR code on a phone.",
+        "more": "Vite and vanilla JavaScript, no framework. It has a live countdown, scroll-snap navigation and Google Maps. The repo holds my version; the owners have changed the site since.",
         "alt": "Pasta Studio landing page with a countdown to the opening"
       }
     }
