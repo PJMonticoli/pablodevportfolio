@@ -7,17 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
   ).matches;
   if (prefersReducedMotion) return;
 
-  const targets = document.querySelectorAll<HTMLElement>("[data-reveal]");
+  // Anything already on screen at load stays put, so the hero is painted
+  // right away instead of waiting for a fade.
+  const viewportHeight = window.innerHeight;
+  const targets = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-reveal]"),
+  ).filter((el) => el.getBoundingClientRect().top >= viewportHeight);
   if (!targets.length) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-visible");
-          observer.unobserve(entry.target);
-        }
-      });
+      entries
+        .filter((entry) => entry.isIntersecting)
+        .forEach((entry, index) => {
+          const el = entry.target as HTMLElement;
+          el.style.transitionDelay = `${Math.min(index, 5) * 60}ms`;
+          el.classList.add("reveal-visible");
+          observer.unobserve(el);
+        });
     },
     // No negative bottom margin: shrinking the root can make the very last
     // element on the page (e.g. the footer) mathematically unreachable when
@@ -25,9 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.1 },
   );
 
-  targets.forEach((el, index) => {
+  targets.forEach((el) => {
     el.classList.add("reveal-hidden");
-    el.style.transitionDelay = `${Math.min(index % 6, 5) * 60}ms`;
     observer.observe(el);
   });
 });
