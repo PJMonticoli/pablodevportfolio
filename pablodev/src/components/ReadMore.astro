@@ -1,0 +1,44 @@
+---
+import ChevronDown from "../icons/ChevronDown.astro";
+
+interface Props {
+  more: string;
+  less: string;
+}
+
+const { more, less } = Astro.props;
+---
+
+<details class="read-more group/more">
+  <summary
+    class="inline-flex cursor-pointer list-none items-center gap-1 py-1.5 -my-1.5 font-medium text-yellow-300 transition-colors duration-200 hover:text-yellow-200 motion-reduce:transition-none [&::-webkit-details-marker]:hidden"
+  >
+    <span class="group-open/more:hidden">{more}</span>
+    <span class="hidden group-open/more:inline">{less}</span>
+    <ChevronDown
+      class="size-4 transition-transform duration-200 group-open/more:rotate-180 motion-reduce:transition-none"
+    />
+  </summary>
+  <div class="read-more-body mt-3">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .read-more[open] .read-more-body {
+    animation: read-more-in 200ms ease-out;
+  }
+
+  @keyframes read-more-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .read-more[open] .read-more-body {
+      animation: none;
+    }
+  }
+</style>
