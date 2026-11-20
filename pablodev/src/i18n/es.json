@@ -99,6 +99,7 @@
         "title": "WallStreetPro",
         "text": "Un sistema de análisis para swing trading que corre sobre Claude Code. Una vez por semana lee datos de TradingView por un servidor MCP, revisa un conjunto corto de reglas y responde BUY o NO BUY con entrada, stop y fecha de salida. Nunca ejecuta una orden.",
         "text2": "Probé las reglas con un backtest de 5.533 operaciones simuladas (446 tickers, 2015 a 2026). No tenían ventaja sobre el mercado, así que en la versión 5 saqué la mitad de los 10 controles y dejé los que los datos respaldaban.",
+        "text3": "Ahora tiene memoria propia como un LLM wiki: una página de contexto que se carga en cada sesión con un límite de 6.000 caracteres, más un índice, un log append-only y un lint. También trae un chequeo para promediar a la baja, que reproduce una posición perdedora en casos pasados parecidos y decide con un criterio escrito antes de la primera corrida.",
         "tableCaption": "Condiciones de aprobación, escritas antes de correrlo",
         "colCondition": "Condición",
         "colNeeded": "Pedía",
