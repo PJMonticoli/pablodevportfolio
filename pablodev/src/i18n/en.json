@@ -14,7 +14,8 @@
     "certifications": "Certifications",
     "contact": "Contact",
     "menu": "Menu",
-    "language": "Language"
+    "language": "Language",
+    "backToTop": "Back to top"
   },
   "hero": {
     "avatarAlt": "Portrait of Pablo Monticoli",
@@ -97,19 +98,17 @@
     "items": {
       "wallstreetpro": {
         "title": "WallStreetPro",
-        "text": "A swing trading analysis system that runs on Claude Code. Once a week it reads live chart data from TradingView through an MCP server, checks a short rule set and answers BUY or NO BUY with entry, stop and exit date. It never places an order.",
-        "text2": "I backtested the rules on 5,533 simulated trades (446 tickers, 2015 to 2026). They had no edge over the market, so in version 5 I dropped half of the 10 guardrails and kept the ones the data supported.",
-        "tableCaption": "Pass conditions, written before the run",
-        "colCondition": "Condition",
-        "colNeeded": "Needed",
-        "colMeasured": "Measured",
-        "rows": [
-          { "name": "Expectancy net of costs", "needed": "> +0.15R", "measured": "-0.096R" },
-          { "name": "Student's t", "needed": "> 2", "measured": "-4.47" },
-          { "name": "Alpha against SPY", "needed": "> +0.10R", "measured": "-0.139R" },
-          { "name": "Years with positive expectancy", "needed": "8 of 12", "measured": "3 of 12" }
+        "text": "A swing trading assistant on Claude Code: once a week it reads TradingView through MCP and answers BUY or NO BUY with entry, stop and exit date. It never places an order.",
+        "text2": "A backtest of 5,533 trades failed the four pass conditions I wrote before running it, so v5 kept only the rules the data supported. It also keeps its own memory as an LLM wiki and decides whether to average down a loser with a criterion set in advance.",
+        "flowCaption": "How it works",
+        "flow": [
+          { "via": "", "title": "TradingView", "detail": "Live charts and the indicator" },
+          { "via": "MCP", "title": "Claude Code", "detail": "Five rules and its LLM wiki memory" },
+          { "via": "", "title": "BUY or NO BUY", "detail": "Entry, stop and exit date" },
+          { "via": "", "title": "Order placed by hand", "detail": "It never trades on its own" }
         ],
-        "tableNote": "Result: 0 of 4 passed."
+        "backtestLabel": "Offline backtest",
+        "backtest": ["5,533 trades", "0 of 4 pass conditions", "v5 keeps what passed"]
       },
       "dockwitcher": {
         "title": "Dockwitcher",

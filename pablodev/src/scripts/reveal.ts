@@ -21,15 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
         .filter((entry) => entry.isIntersecting)
         .forEach((entry, index) => {
           const el = entry.target as HTMLElement;
-          el.style.transitionDelay = `${Math.min(index, 5) * 60}ms`;
+          el.style.transitionDelay = `${Math.min(index, 4) * 40}ms`;
           el.classList.add("reveal-visible");
           observer.unobserve(el);
         });
     },
     // No negative bottom margin: shrinking the root can make the very last
     // element on the page (e.g. the footer) mathematically unreachable when
-    // there's no extra scroll room below it to satisfy the margin.
-    { threshold: 0.1 },
+    // there's no extra scroll room below it to satisfy the margin. A positive
+    // one starts the fade just before the element enters the screen, so a
+    // fast scroll on a phone never lands on blank space.
+    { threshold: 0, rootMargin: "0px 0px 12% 0px" },
   );
 
   targets.forEach((el) => {
