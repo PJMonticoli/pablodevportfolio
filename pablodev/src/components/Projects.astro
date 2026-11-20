@@ -118,8 +118,8 @@ const PROJECTS: ProjectCard[] = [
         }
       </ul>
       <p class="text-white/70 leading-relaxed">{wsp.text}</p>
-      <p class="text-white/70 leading-relaxed">{wsp.text2}</p>
-      <div class="mt-1">
+      <p class="hidden text-white/70 leading-relaxed md:block">{wsp.text2}</p>
+      <div class="mt-1 hidden md:block">
         <LinkButton href={WSP_REPO} label={`${t.code}: ${wsp.title}`}>
           <GitHub class="size-6" aria-hidden="true" />
           {t.code}
@@ -145,12 +145,12 @@ const PROJECTS: ProjectCard[] = [
                 </div>
               )}
               <div
-                class={`rounded-xl border px-4 py-2.5 ${
+                class={`rounded-xl border px-4 py-2 md:py-2.5 ${
                   i === 1 ? "border-yellow-400/40 bg-yellow-400/[0.06]" : "border-white/10 bg-white/[0.04]"
                 }`}
               >
                 <p class={`text-sm font-semibold ${i === 1 ? "text-yellow-300" : "text-white"}`}>{step.title}</p>
-                <p class="text-xs text-white/60">{step.detail}</p>
+                <p class="hidden text-xs text-white/60 md:block">{step.detail}</p>
               </div>
             </li>
           ))
@@ -170,10 +170,22 @@ const PROJECTS: ProjectCard[] = [
         </ol>
       </div>
     </figure>
+
+    <div class="flex flex-col gap-4 md:hidden">
+      <ReadMore more={t.more} less={t.less}>
+        <p class="text-white/70 leading-relaxed">{wsp.text2}</p>
+      </ReadMore>
+      <div>
+        <LinkButton href={WSP_REPO} label={`${t.code}: ${wsp.title}`}>
+          <GitHub class="size-6" aria-hidden="true" />
+          {t.code}
+        </LinkButton>
+      </div>
+    </div>
   </div>
 </article>
 
-<div class="mt-20 flex flex-col gap-y-20">
+<div class="mt-14 flex flex-col gap-y-14 md:mt-20 md:gap-y-20">
   {
     PROJECTS.map(({ image, title, text, more, alt, tags, repos }, index) => (
       <article

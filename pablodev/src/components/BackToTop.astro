@@ -1,0 +1,83 @@
+---
+import ChevronDown from "../icons/ChevronDown.astro";
+import { getDict, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = getDict(Astro.props.lang).nav;
+---
+
+<a
+  id="back-to-top"
+  href="#main"
+  aria-label={t.backToTop}
+  title={t.backToTop}
+  class="back-to-top fixed right-4 z-20 inline-flex size-11 items-center justify-center rounded-full bg-white/[0.08] text-white/80 shadow-lg shadow-black/30 ring-1 ring-white/15 backdrop-blur-md hover:text-yellow-400 md:right-8"
+  data-hidden
+>
+  <ChevronDown class="size-5 rotate-180" />
+</a>
+
+<style>
+  .back-to-top {
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
+    transition:
+      opacity 300ms var(--ease-out),
+      transform 300ms var(--ease-out),
+      color 200ms,
+      visibility 0s;
+  }
+  @media (min-width: 768px) {
+    .back-to-top {
+      bottom: 2rem;
+    }
+  }
+  /* visibility (delayed until the fade ends) also takes the hidden button out of the tab order */
+  .back-to-top[data-hidden] {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition:
+      opacity 300ms var(--ease-out),
+      transform 300ms var(--ease-out),
+      visibility 0s 300ms;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .back-to-top,
+    .back-to-top[data-hidden] {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("back-to-top");
+    if (!button) return;
+
+    let ticking = false;
+    const update = () => {
+      button.toggleAttribute("data-hidden", window.scrollY < window.innerHeight);
+      ticking = false;
+    };
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      },
+      { passive: true },
+    );
+    update();
+
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      document.getElementById("main")?.focus({ preventScroll: true });
+    });
+  });
+</script>
