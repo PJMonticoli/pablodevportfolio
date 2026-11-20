@@ -97,9 +97,8 @@
     "items": {
       "wallstreetpro": {
         "title": "WallStreetPro",
-        "text": "A swing trading analysis system that runs on Claude Code. Once a week it reads live chart data from TradingView through an MCP server, checks a short rule set and answers BUY or NO BUY with entry, stop and exit date. It never places an order.",
-        "text2": "I backtested the rules on 5,533 simulated trades (446 tickers, 2015 to 2026). They had no edge over the market, so in version 5 I dropped half of the 10 guardrails and kept the ones the data supported.",
-        "text3": "It now keeps its own memory as an LLM wiki: a context page loaded every session under a 6,000-character budget, plus an index, an append-only log and a lint. It also ships an averaging-down check that replays a losing position on similar past cases and decides with a criterion written before the first run.",
+        "text": "A swing trading assistant on Claude Code: once a week it reads TradingView through MCP and answers BUY or NO BUY with entry, stop and exit date. It never places an order.",
+        "text2": "A backtest of 5,533 trades found no edge, so v5 kept only the rules the data supported. It also keeps its own memory as an LLM wiki and decides whether to average down a loser with a criterion written before the first run.",
         "tableCaption": "Pass conditions, written before the run",
         "colCondition": "Condition",
         "colNeeded": "Needed",
