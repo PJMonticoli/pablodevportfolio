@@ -127,38 +127,49 @@ const PROJECTS: ProjectCard[] = [
       </div>
     </div>
 
-    <div class="self-center">
-      <table class="w-full text-sm">
-        <caption class="pb-3 text-left text-sm font-medium text-white/80">
-          {wsp.tableCaption}
-        </caption>
-        <thead>
-          <tr class="border-b border-white/15 text-left text-xs text-white/60">
-            <th scope="col" class="py-2 pr-3 font-medium">{wsp.colCondition}</th>
-            <th scope="col" class="py-2 px-3 text-right font-medium whitespace-nowrap">{wsp.colNeeded}</th>
-            <th scope="col" class="py-2 pl-3 text-right font-medium whitespace-nowrap">{wsp.colMeasured}</th>
-          </tr>
-        </thead>
-        <tbody class="tabular-nums">
+    <figure class="self-center" aria-labelledby="wsp-flow-caption">
+      <figcaption id="wsp-flow-caption" class="pb-3 text-sm font-medium text-white/80">
+        {wsp.flowCaption}
+      </figcaption>
+      <ol class="flex flex-col">
+        {
+          wsp.flow.map((step, i) => (
+            <li class="flex flex-col">
+              {i > 0 && (
+                <div
+                  class="flex items-center gap-2 py-1 pl-5 text-[11px] font-medium uppercase tracking-wider text-white/45"
+                  aria-hidden="true"
+                >
+                  <span class="text-white/35">↓</span>
+                  {step.via}
+                </div>
+              )}
+              <div
+                class={`rounded-xl border px-4 py-2.5 ${
+                  i === 1 ? "border-yellow-400/40 bg-yellow-400/[0.06]" : "border-white/10 bg-white/[0.04]"
+                }`}
+              >
+                <p class={`text-sm font-semibold ${i === 1 ? "text-yellow-300" : "text-white"}`}>{step.title}</p>
+                <p class="text-xs text-white/60">{step.detail}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <div class="mt-5 rounded-xl border border-dashed border-white/15 px-4 py-3">
+        <p class="text-[11px] font-medium uppercase tracking-wider text-white/45">{wsp.backtestLabel}</p>
+        <ol class="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
           {
-            wsp.rows.map((row) => (
-              <tr class="border-b border-white/10">
-                <th scope="row" class="py-2.5 pr-3 text-left font-normal text-white/70">
-                  {row.name}
-                </th>
-                <td class="py-2.5 px-3 text-right font-mono text-white/60 whitespace-nowrap">
-                  {row.needed}
-                </td>
-                <td class="py-2.5 pl-3 text-right font-mono font-semibold text-yellow-300 whitespace-nowrap">
-                  {row.measured}
-                </td>
-              </tr>
+            wsp.backtest.map((item, i) => (
+              <li class="flex items-center gap-2">
+                {i > 0 && <span class="text-white/35" aria-hidden="true">→</span>}
+                <span class={i === 1 ? "font-semibold text-yellow-300" : "text-white/70"}>{item}</span>
+              </li>
             ))
           }
-        </tbody>
-      </table>
-      <p class="mt-3 text-sm text-white/60">{wsp.tableNote}</p>
-    </div>
+        </ol>
+      </div>
+    </figure>
   </div>
 </article>
 

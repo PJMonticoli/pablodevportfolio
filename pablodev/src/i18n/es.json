@@ -98,18 +98,16 @@
       "wallstreetpro": {
         "title": "WallStreetPro",
         "text": "Un asistente de swing trading sobre Claude Code: una vez por semana lee TradingView por MCP y responde BUY o NO BUY con entrada, stop y fecha de salida. Nunca ejecuta una orden.",
-        "text2": "Un backtest de 5.533 operaciones no encontró ventaja, así que la v5 dejó solo las reglas que los datos respaldaban. Además guarda su propia memoria como un LLM wiki y decide si conviene promediar una posición perdedora con un criterio escrito antes de la primera corrida.",
-        "tableCaption": "Condiciones de aprobación, escritas antes de correrlo",
-        "colCondition": "Condición",
-        "colNeeded": "Pedía",
-        "colMeasured": "Midió",
-        "rows": [
-          { "name": "Esperanza neta de costos", "needed": "> +0,15R", "measured": "-0,096R" },
-          { "name": "t de Student", "needed": "> 2", "measured": "-4,47" },
-          { "name": "Alfa contra SPY", "needed": "> +0,10R", "measured": "-0,139R" },
-          { "name": "Años con esperanza positiva", "needed": "8 de 12", "measured": "3 de 12" }
+        "text2": "Un backtest de 5.533 operaciones no pasó ninguna de las cuatro condiciones que escribí antes de correrlo, así que la v5 dejó solo las reglas que los datos respaldaban. Además guarda su propia memoria como un LLM wiki y decide si conviene promediar una posición perdedora con un criterio fijado de antemano.",
+        "flowCaption": "Cómo funciona",
+        "flow": [
+          { "via": "", "title": "TradingView", "detail": "Gráficos en vivo y el indicador" },
+          { "via": "MCP", "title": "Claude Code", "detail": "Cinco reglas y su memoria LLM wiki" },
+          { "via": "", "title": "BUY o NO BUY", "detail": "Entrada, stop y fecha de salida" },
+          { "via": "", "title": "La orden se carga a mano", "detail": "Nunca opera solo" }
         ],
-        "tableNote": "Resultado: pasó 0 de 4."
+        "backtestLabel": "Backtest aparte",
+        "backtest": ["5.533 operaciones", "0 de 4 condiciones", "v5 deja lo que pasó"]
       },
       "dockwitcher": {
         "title": "Dockwitcher",
